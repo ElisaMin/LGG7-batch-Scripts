@@ -20,7 +20,7 @@ My English 's not good and this one dosen't work on non-Chinese environment, so�
 ### 流产项目
 源:DLL替换，由于set /p在管理员模式下不工作，所以流产了。
 # 下载
-https://github.com/Heizi-Bitch/LG-G7-BOX/releases/tag/v0.2-beta
+https://github.com/Heizi-Bitch/LG-G7-BOX/releases/
 # 恰饭
 加群付费给我吃顿好饭呗 [620421749](https://jq.qq.com/?_wv=1027&k=55mFD6u)
 ![恰饭](1.png)
