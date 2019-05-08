@@ -1,32 +1,52 @@
 @echo off
 set rf=%~dp0
 ::ÎÒÔÚĞ´Õâ¸ö¶«Î÷µÄÊ±ºòÓĞµãÀ§»¹ÓĞµã±ãÃØ£¬ËùÒÔÕâ¸ö½Å±¾¿ÉÄÜÓÖÎŞÁÄÓÖÊº¡£
+cls
+if not exist %rf%file\recheche.txt (  
+echo ±¾°æ±¾Î´²âÊÔ
+echo Èç¹û³öÏÖÎÊÌâÇë
+echo.
+pause
+echo.
+echo ½ØÍ¼ºó£¡£¡£¡
+echo.
+pause
+echo.
+echo Ë½ÁÄÈºÖ÷£¡£¡£¡£¡
+echo.
+echo Èç¹ûÃ»ÓĞ½ØÍ¼ÇëÏêÏ¸ÃèÊöÄãÖ´ĞĞÁËÊ²Ã´²Ù×÷
+pause
+echo "1">file\recheche.txt
+)
 cls 
-goto af
+goto HOME
+
+
+
 
 :home
-echo ======================================
-echo =            LG-G7-¹¤¾ß°ü            =
-echo =------------------------------------=
-echo = ÓÉ¡°LG G7 ThinQ À¬»øÀĞ¿ì»îÈº¡±³öÆ· =
-echo =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =
-echo ======================================
-echo = LGUPÓĞÒ»¼ü¿ªÆôPARTITION DL¡¢»¥¶¯»ì =
-echo = Ë¢µÈ¡£                             =
-echo =------------------------------------=
-echo = ADB/FastbootÓĞºÜ¶à»ùÓÚADB/Fastboot =
-echo = Ö¸ÁîÖÆ×÷µÄÑ¡Ïî£¬ÀıÈçÒ»¼üÉ¾³ılaf_a  =
-echo = ¡¢ÎŞÄÔË¢GSIÖ®ÀàµÄ¡£                =
-echo ======================================
-echo £¡×¢Òâ:Èç¹ûÑ¡ÔñLGUPÇëÒÔ¹ÜÀíÔ±´ò¿ª½Å±¾£¡
-echo ======================================
-echo =               ÇëÑ¡Ôñ               =
-echo =------------------------------------=
-echo = A.  LGUP       ^| B.  ADB/Fastboot  =
-echo ======================================
+cls
+ echo ======================================  ^|      ±¾½Å±¾±àĞ´»·¾³ÊÇ1080p Windows10
+ echo =            LG-G7-¹¤¾ß°ü            =  ^|  ¿ÉÄÜÔËĞĞÔÚWindows7ÉÏ¸ñÊ½»á±Àµô ²»¹ı¿´µÃ¶®¾ÍºÃ
+ echo =------------------------------------=
+   echo = ÓÉ¡°LG G7 ThinQ À¬»øÀĞ¿ì»îÈº¡±³öÆ· =  ^|      ³öÏÖÈÎºÎÉÁÍËÇë¡°Ë½ÁÄ¡±ÈºÖ÷²¢ÏêÏ¸Ëµ
+echo =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =  ^|  ÃûÔÚÄÄ²½³öÏÖÎÊÌâ£¬Èç¹û³öÏÖ´íÎóÇë½ØÍ¼
+ echo ======================================
+ echo.
+ echo -------------------------------------------------------
+ echo.
+ echo ======================================  ^|      A.LGUP £¨Ã»É¶ÓÃ À¨ºÅÉ¾µô£© ÓĞÌæ»»ÆÆ½â°æµÄlgupºÍ
+ echo =            ÇëÑ¡ÔñÄ£Ê½              =  ^|  ±¸·İµ±Ç°LG UPÖ®ÀàµÄ Ê¹ÓÃ±¾Ä£Ê½ÇëÒÔ¹ÜÀíÔ±Ä£Ê½´ò¿ª¡£
+ echo =------------------------------------=
+echo = A.  LGUP       ^| B.  ADB/Fastboot  =  ^|      B.A^/FµÄ¹¤¾ß±È½Ï¶à,ÀıÈç¿ìËÙË¢GSI¡¢ÇĞ»»AB·ÖÇø£¬Ò»¼ü
+ echo ======================================  ^|  É¾³ıLaf_aÉ¶µÄ¡£
 set /p goto=(A/B)
-if %goto%=="a" goto lgup
-if %goto%=="b" goto af
+if %goto%==a goto lgup
+if %goto%==A goto lgup
+if %goto%==b goto af
+if %goto%==B goto af
+
+goto home
 
 :lgup
 cls
@@ -55,7 +75,11 @@ goto :uend
 
 :uhome
 cls
-echo £¨±¾½Å±¾ĞŞ¸Ä×Ôhttps://forum.xda-developers.com/android/general/tecknights-aristo-2-tutorials-t3805141/page3£©
+echo Ò»¸öÉùÃ÷
+echo ±¾½Å±¾ĞŞ¸Ä×Ôhttps://forum.xda-developers.com/android/general/tecknights-aristo-2-tutorials-t3805141/page3
+echo.
+choice /m "Ò»ÃëÖÓºó¾Í»áÌø×ª"  /c tecknighs /t 1 /d t
+cls
 echo.
 echo ======================================
 echo =             LGUP¹¤¾ß°ü             =
@@ -63,11 +87,11 @@ echo =------------------------------------=
 echo = ÓÉ¡°LG G7 ThinQ À¬»øÀĞ¿ì»îÈº¡±³öÆ· =
 echo =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =
 echo ======================================
-echo ++++++++++++++++++++++++++++++++++++++
+echo.
 echo ======================================
 echo =               ÇëÑ¡Ôñ               =
 echo =------------------------------------=
-echo = 1. »¥¶¯Ê½Ë¢¹Ì¼ş ^| 2. ÆÆ½âLGUP      =
+echo = 1. ¹¾¹¾¹¾¹¾¹¾¹¾ ^| 2. ÆÆ½âLGUP      =
 echo =------------------------------------=
 echo = 3. »¹Ô­LGUP     ^| 4.^*Á÷²úÏîÄ¿^*     =
 echo ======================================
@@ -81,7 +105,7 @@ if %lgupmode%==4 goto ucd
 echo ¹¾¹¾¹¾
 goto uend
 
-:ubu
+:ubu 
 copy "%rf%file\lgup\LGUPD.exe" "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"
 echo Ö¸ÁîÖ´ĞĞÍê³É
 if not errorlevel 1 ( 
@@ -224,6 +248,8 @@ set /p fastboot=
 
 
 :ahome
+cls
+
 %adb% kill-server
 cls
  echo  ======================================   ^+----------------------------------^+   
@@ -234,14 +260,14 @@ echo  =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =   ^| Ê¹ÓÃFastbootÖ¸ÁîÇë½«ÊÖ»úÖØÆôÖ
  echo  ======================================   ^| FastbootÄ£Ê½¡£                   ^|   ºıÅªÒ»ÏÂÄãÃÇËãÁË
  echo                                           ^+----------------------------------^+   £¨¿Ş£©
   echo  ^+------------------------------------^+  
-  echo  ^|       ADBÖ¸Áî-ÎŞĞèROOT/TWRPÇø      ^|   ^+----------------------------------^+
-  echo  ^+---------------^+--------------------^+   ^|            FastbootÖ¸ÁîÇø        ^|
- echo  ^| A1. Ê±¼äÍ¬²½  ^| A2. Òş²Øµ¼º½À¸     ^|   ^+---------------^+------------------^+
-  echo  ^+---------------^+-----^+--------------^+   ^| F1. Ë¢boot    ^| F2. ÇĞ»»AB·ÖÇø   ^|
+  echo  ^|       ADBÖ¸Áî-ÎŞĞèROOT/TWRPÇø      ^|   ^+----------------------------------^+  ÌáÊ¾£º
+  echo  ^+---------------^+--------------------^+   ^|            FastbootÖ¸ÁîÇø        ^|  ½øÈëFastbootµÄ·½·¨
+ echo  ^| A1. Ê±¼äÍ¬²½  ^| A2. Òş²Øµ¼º½À¸     ^|   ^+---------------^+------------------^+  1.¹Ø»ú 2.°´×¡ÒôÁ¿ÏÂ
+  echo  ^+---------------^+-----^+--------------^+   ^| F1. Ë¢boot    ^| F2. ÇĞ»»AB·ÖÇø   ^|  3.²åÈëÁ¬½ÓµçÄÔµÄÊı¾İÏß
  echo  ^| A3. Ò»¼ü½ûÓÃÏµÍ³Èí¼ş^| A4. ADBÖØÆô  ^|   ^+---------------^+-^+----------------^+
   echo  ^+------------------------------------^+   ^| F3. ÍêÈ«Ë¢ÈëGSI ^| F.4Ö»Ë¢System  ^|
-  echo  ^| ±£Áô                               ^|   ^+-----------------^+----------------^+
-  echo  ^+------------------------------------^+   ^| ±£Áô                             ^|
+  echo  ^| ±£Áô                               ^|   ^+-----------------^+----------------^+  £¡
+  echo  ^+------------------------------------^+   ^| ±£Áô                             ^|    Ê¹ÓÃ¸ÃÄ£Ê½Çë²»ÒªÒÔ¹ÜÀíÔ±Ä£Ê½´ò¿ª
   echo  ^| ±£Áô                               ^|   ^|----------------------------------^+
   echo  ^+------------------------------------^+   ^| ±£Áô                             ^|
    echo                                           ^+----------------------------------^+
@@ -297,15 +323,16 @@ cls
   echo  Ö´ĞĞÍê±Ï
 goto end
 
-
 :twrp Ä£°å
 cls
   echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
   echo  ^| Ê±¼äÍ¬²½                           ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
   echo  ^+------------------------------------^+
   
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
   echo  Ö´ĞĞÍê±Ï
 goto end
+
 
 :ntpsetting
 cls
@@ -317,7 +344,212 @@ cls
   echo  Ö´ĞĞÍê±Ï
 goto end
 
+:navbarhider
+if %recheche%==3  (
+cls
+echo ÊäÈëÏÂ³ÁÊıÖµ ÈçĞèÍË³ö Çë¹Ø±Õ¡£
+set /p overscan=
+%adb% shell wm overscan 0,0,0,-%overscan%
+goto navbarhider
+)
+set recheche=1
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^| Òş²Øµ¼º½À¸                         ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+
+  echo  C:³Á½şÄ£Ê½£¬ÀàËÆÓÚ¡°È«ÆÁ¡±µÄĞ§¹û¡£Q:È¡Ïû³Á½ş
+  echo  X:½«µ¼º½À¸ÉèÖÃµ½ÏÔÊ¾ÇøÓòÖ®Íâ£¬ÊÊÓÃÓÚÊÖÊÆ¡£
+  choice /c cqx
+if %errorlevel%==1 %adb% shell settings put global policy_control immersive.navigation=*
+if %errorlevel%==2 %adb% shell settings put global policy_control null
+if %errorlevel%==3 (
+     echo.
+     echo  ²»Í¬µÄ·Ö±æÂÊÓĞ²»Í¬µÄĞ§¹û
+     echo  1.1080p 2.2k 3.×ÔĞĞÊäÈë²ÎÊı 4.»Ö¸´
+     choice /c 1234
+     if %errorlevel%==1 %adb% shell wm overscan 0,0,0,-143
+     if %errorlevel%==2 %adb% shell wm overscan 0,0,0,-191
+     if %errorlevel%==3 (
+	     cls
+         echo ÊäÈëÏÂ³ÁÊıÖµ
+         set /p overscan=
+          %adb% shell wm overscan 0,0,0,-%overscan%
+     )
+     if %errorlevel%==4 %adb% shell wm overscan reset
+)
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+set recheche=3
+goto navbarhider
 
+:fuckthelgsoftweare
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^| ½ûÓÃÓ¦ÓÃ                           ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+
+  choice /c dj /m "D¶³½á J½â¶³"
+  if %errorlevel%==1 set frozen=disable-user
+  if %errorlevel%==2 set frozen=enable
+%adb% shell pm %frozen% com.lge.quicktools
+%adb% shell pm %frozen% com.lge.clock
+%adb% shell pm %frozen% com.lge.hifirecorder
+%adb% shell pm %frozen% com.lge.cic.eden.service
+%adb% shell pm %frozen% com.lge.provider.yellowpage
+%adb% shell pm %frozen% com.lge.cnas.main
+%adb% shell pm %frozen% com.lge.cnas.terms
+%adb% shell pm %frozen% com.lge.iuc
+%adb% shell pm %frozen% com.lge.lms
+%adb% shell pm %frozen% com.lge.qlens
+%adb% shell pm %frozen% com.lge.eulaprovider
+%adb% shell pm %frozen% com.lge.eula
+%adb% shell pm %frozen% com.lge.floatingbar
+%adb% shell pm %frozen% com.lge.cinemagraph
+%adb% shell pm %frozen% com.lguplus.oemsearch
+%adb% shell pm %frozen% com.lge.updatecenter
+%adb% shell pm %frozen% com.lge.lgassistant
+%adb% shell pm %frozen% com.lguplus.mobile.cs
+%adb% shell pm %frozen% com.skt.skaf.OA00018282
+%adb% shell pm %frozen% com.lguplus.appstore
+%adb% shell pm %frozen% com.lge.lgpay
+%adb% shell pm %frozen% com.android.bips
+%adb% shell pm %frozen% com.lge.lgassistant
+%adb% shell pm %frozen% com.android.bookmarkprovider
+%adb% shell pm %frozen% com.android.calendar
+%adb% shell pm %frozen% com.android.calllogbackup
+%adb% shell pm %frozen% com.android.chrome
+%adb% shell pm %frozen% com.android.egg
+%adb% shell pm %frozen% com.android.emergency
+%adb% shell pm %frozen% com.android.hotwordenrollment.okgoogle
+%adb% shell pm %frozen% com.android.hotwordenrollment.tgoogle
+%adb% shell pm %frozen% com.android.hotwordenrollment.xgoogle
+%adb% shell pm %frozen% com.android.printspooler
+%adb% shell pm %frozen% com.android.providers.partnerbookmarks
+%adb% shell pm %frozen% com.crucialsoft.asm
+%adb% shell pm %frozen% com.crucialsoft.fido.client
+%adb% shell pm %frozen% com.crucialtec.uaf
+%adb% shell pm %frozen% com.facebook.appmanager
+%adb% shell pm %frozen% com.facebook.system
+%adb% shell pm %frozen% com.google.android.apps.docs
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.docs
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.sheets
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.slides
+%adb% shell pm %frozen% com.google.android.apps.maps
+%adb% shell pm %frozen% com.google.android.apps.photos
+%adb% shell pm %frozen% com.google.android.apps.tachyon
+%adb% shell pm %frozen% com.google.android.calculator
+%adb% shell pm %frozen% com.google.android.configupdater
+%adb% shell pm %frozen% com.google.android.gm
+%adb% shell pm %frozen% com.google.android.googlequicksearchbox
+%adb% shell pm %frozen% com.google.android.ims
+%adb% shell pm %frozen% com.google.android.marvin.talkback
+%adb% shell pm %frozen% com.google.android.music
+%adb% shell pm %frozen% com.google.android.onetimeinitializer
+%adb% shell pm %frozen% com.google.android.partnersetup
+%adb% shell pm %frozen% com.google.android.printservice.recommendation
+%adb% shell pm %frozen% com.google.android.tts
+%adb% shell pm %frozen% com.google.android.videos
+%adb% shell pm %frozen% com.google.android.youtube
+%adb% shell pm %frozen% com.google.ar.core
+%adb% shell pm %frozen% com.google.ar.lens
+%adb% shell pm %frozen% com.ipsec.profile
+%adb% shell pm %frozen% com.lge.bnr
+%adb% shell pm %frozen% com.lge.bnr.launcher
+%adb% shell pm %frozen% com.lge.briefing
+%adb% shell pm %frozen% com.lge.cloudhub
+%adb% shell pm %frozen% com.lge.exchange
+%adb% shell pm %frozen% com.lge.gallery.collagewallpaper
+%adb% shell pm %frozen% com.lge.gallery.vr.wallpaper
+%adb% shell pm %frozen% com.lge.ia.task.smartsetting
+%adb% shell pm %frozen% com.lge.iftttmanager
+%adb% shell pm %frozen% com.lge.leccp
+%adb% shell pm %frozen% com.lge.lgaccount
+%adb% shell pm %frozen% com.lge.lgmapui
+%adb% shell pm %frozen% com.lge.lifetracker
+%adb% shell pm %frozen% com.lge.livewallpaper.multiphoto
+%adb% shell pm %frozen% com.lge.mirroringhead
+%adb% shell pm %frozen% com.lge.myplace
+%adb% shell pm %frozen% com.lge.myplace.engine
+%adb% shell pm %frozen% com.lge.qhelp
+%adb% shell pm %frozen% com.lge.qhelp.application
+%adb% shell pm %frozen% com.lge.remote.lgairdrive
+%adb% shell pm %frozen% com.lge.remote.setting
+%adb% shell pm %frozen% com.lge.smartshare
+%adb% shell pm %frozen% com.lge.smartshare.provider
+%adb% shell pm %frozen% com.lge.smartsharepush
+%adb% shell pm %frozen% com.lge.smartsuggestion
+%adb% shell pm %frozen% com.lge.sync
+%adb% shell pm %frozen% com.lge.task
+%adb% shell pm %frozen% com.lge.touchcontrol
+%adb% shell pm %frozen% com.lge.video.vr.wallpaper
+%adb% shell pm %frozen% com.lge.videostudio
+%adb% shell pm %frozen% com.lge.vrplayer
+%adb% shell pm %frozen% com.rsupport.rs.activity.lge.allinone
+%adb% shell pm %frozen% com.google.android.syncadapters.calendar
+%adb% shell pm %frozen% com.android.vending
+%adb% shell pm %frozen% com.google.android.gsf
+%adb% shell pm %frozen% com.google.android.gms
+%adb% shell pm %frozen% com.google.android.feedback
+%adb% shell pm %frozen% com.google.android.backuptransport
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+goto end
+
+:noobreboot
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^| ADBÖØÆô                            ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+
+  echo  E. ÆÕÍ¨ÖØÆô  R. RecoveryÄ£Ê½  
+  echo  B. ¿ÉÄÜ»áÖØÆô½øFastboot
+  choice /c erb
+  if %errorlevel%==1 %adb% reboot
+  if %errorlevel%==2 %adb% reboot recovery
+  if %errorlevel%==3 %adb% reboot bootloader
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+goto end
+
+:lafakiller
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^|                                    ^|    ¿ªÆôUSBµ÷ÊÔ»ò
+  echo  ^+------------------------------------^+    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+goto end
+
+:shitloop
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^| ÎŞÏŞÖØÆô½øTWRP                     ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  ^+------------------------------------^+
+  pause
+  %adb% shell dd if=/dev/zero of=/dev/block/bootdevice/by-name/misc bs=256 count=1 conv=notrunc
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+goto end
+
+:sideload
+if recheche=
+cls
+  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
+  echo  ^| TWRPÏßË¢ZipË¢»ú°ü                  ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  ^+------------------------------------^+
+  echo  Çë½øÈëTWRPºóµã»÷¡°¸ß¼¶/Advanced¡±Ñ¡Ôñ¡°
+  echo  ADB Sideload¡±ºó»¬¶¯ÏÂ·½µÄ°´Å¥
+  pause
+  echo  Çë°ÑÒªË¢µÄË¢»ú°üÍÏÈë±¾´°¿Ú
+  set /p sideload=
+  %adb% sideload %sideload%
+  set recheche=2
+  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  Ö´ĞĞÍê±Ï
+  echo  ÈçĞèÍË³öÇë¹Ø±Õ´°¿Ú
+  echo  Çë°ÑÒªË¢µÄË¢»ú°üÍÏÈë±¾´°¿Ú
+  set /p sideload=
+  %adb% sideload %sideload%
+goto sideload
 
 :flash-boot
 cls
