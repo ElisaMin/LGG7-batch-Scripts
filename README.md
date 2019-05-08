@@ -23,4 +23,4 @@ My English 's not good and this one dosen't work on non-Chinese environment, so�
 https://github.com/Heizi-Bitch/LG-G7-BOX/releases/tag/v0.2-beta
 # 恰饭
 加群付费给我吃顿好饭呗 [620421749](https://jq.qq.com/?_wv=1027&k=55mFD6u)
-![恰饭](1.jpg)
+![恰饭](1.png)
