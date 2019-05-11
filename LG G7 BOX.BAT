@@ -1,7 +1,6 @@
 @echo off
 set rf=%~dp0
-::我在写这个东西的时候有点困还有点便秘，所以这个脚本可能又无聊又屎。
-cls
+cls ::我在写这个东西的时候有点困还有点便秘，所以这个脚本可能又无聊又屎。
 if not exist %rf%file\recheche.txt (  
 echo 本版本未测试
 echo 如果出现问题请
@@ -512,9 +511,13 @@ goto end
 :lafakiller
 cls
   echo  ^+------------------------------------^+  ！请确认你已经
-  echo  ^|                                    ^|    开启USB调试或
+  echo  ^| laf_a杀手                          ^|    开启USB调试或
   echo  ^+------------------------------------^+    进入TWRP并连接上电脑
-  echo  
+  echo  三键之内杀了你 
+  echo.
+  echo  请留意Root权限申请
+  pause
+  %adb% shell "su -c 'dd if=/dev/zero of=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a'"
   echo  出啥问题截图再问
   echo  执行完毕
 goto end
@@ -598,14 +601,16 @@ set /p bootfile=
   echo  ^| 请把要刷vendor.img的拖入窗口       ^|
   echo  ^+------------------------------------^+
 set /p vendorfile=
-%fastboot%  --disable-verity --disable-verification flash vendor_a %vendorfile%
+%fastboot%  flash vendor_a %vendorfile%
   echo  执行完毕
   echo  ^+------------------------------------^+
   echo  ^| 请把要刷System.img的拖入窗口       ^|
   echo  ^+------------------------------------^+
 set /p systemfile=
-%fastboot%  --disable-verity --disable-verification flash system_a %systemfile%
+%fastboot% flash system_a %systemfile%
   echo  执行完毕  
+  %fastboot% -w reboot
+  echo  。。。重启中
 goto end
 
 
