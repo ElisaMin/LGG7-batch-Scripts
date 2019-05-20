@@ -65,7 +65,7 @@ goto ubackup
 
 :ubackup
 echo LG UP.exe备份中
-copy "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"  %rf%file\lgup\LGUPR.exe
+copy "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"  "%rf%file\lgup\LGUPR.exe"
 if not errorlevel 1 goto uhome
 echo.
 echo 错误:lG UP.exe复制不成功
@@ -517,7 +517,12 @@ cls
   echo.
   echo  请留意Root权限申请
   pause
-  %adb% shell "su -c 'dd if=/dev/zero of=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a'"
+  %adb% shell "su -c 'dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a of=/sdcard/laf_a_backup.img'"
+  %adb% shell "su -c 'dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_b of=/sdcard/laf_b_backup.img'"
+  %adb% pull /sdcard/laf_a_backup.img %rf%\file\lafbackup\laf_a_backup.img
+  %adb% pull /sdcard/laf_b_backup.img %rf%\file\lafbackup\laf_b_backup.img
+  %adb% shell "touch /sdcard/laf_a
+  %adb% shell "su -c 'dd if=/sdcard/laf_a of=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a'"
   echo  出啥问题截图再问
   echo  执行完毕
 goto end
@@ -608,9 +613,9 @@ set /p vendorfile=
   echo  ^+------------------------------------^+
 set /p systemfile=
 %fastboot% flash system_a %systemfile%
-  echo  执行完毕  
   %fastboot% -w reboot
   echo  。。。重启中
+  echo  执行完毕  
 goto end
 
 
@@ -623,9 +628,19 @@ cls
   echo  ^+------------------------------------^+
 set /p systemfile=
 %fastboot%  --disable-verity --disable-verification flash system_a %systemfile%
-  echo  执行完毕
-  echo  出啥问题截图再问
+choice /c yn /m "清除数据？^(推荐清除^)"
+if %errorlevel%==1 (
+     %fastboot% -w reboot
+     echo  。。。重启中
+	 echo  执行完毕
+     echo  出啥问题截图再问
+     goto end
+  )
+if %errorlevel%==2 (
+echo  执行完毕
+echo  出啥问题截图再问
 goto end
+)
 
 :end
 :end-this-shit
