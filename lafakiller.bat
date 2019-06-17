@@ -17,6 +17,7 @@ echo 未在目录下找到adb.exe，请下载完整包或重新定向adb.exe。
 goto r-a
 ) 
 echo 成功找到adb.exe
+:: set adb=echo
 set adb=%rf%adb\adb.exe
 echo -------------------------------------------------------------------------------
 goto pre-home
@@ -111,13 +112,7 @@ echo       5. 写入laf_a      6. 写入laf_b
 echo.
 echo.
 echo -------------------------------------------------------------------------------
-choice /m "请选择操作" /c 12456
-if %errorlevel%==1 set mode=1
-if %errorlevel%==2 set mode=2
-if %errorlevel%==3 set mode=3
-if %errorlevel%==4 set mode=4
-if %errorlevel%==5 set mode=5
-if %errorlevel%==6 set mode=6
+set /p mode=请选择操作 ^[1,2,3,4,5,6^]
 
 cls
 echo PowerBy-HEIZI %number%
@@ -133,29 +128,34 @@ if not %suckess%==success (
 echo 	获取Root权限失败，请进入MagiskManager给予Shell Root权限后再打开该程序。
 set /p powerbyheizi=看不懂上面我在说啥请自杀，按任意键立即自杀^(指立即退出程序^)。
 goto endd
- )
+  )
 echo 	获取Root权限成功
 echo -------------------------------------------------------------------------------
 if %mode%==1 (
 set laf=laf_a
 goto laf-backup
 )
+
 if %mode%==2 (
 set laf=laf_b
 goto laf-backup
 )
+
 if %mode%==3 (
 set laf=laf_a
 goto laf-delete
 )
+
 if %mode%==4 (
 set laf=laf_b
 goto laf-delete
 )
+
 if %mode%==5 (
 set laf=laf_a
 goto laf-restore
 )
+
 if %mode%==6 (
 set laf=laf_b
 goto laf-restore
@@ -192,4 +192,9 @@ goto end-wrong
 set /p powerbyheizi=神奇BUG,提交后可获得一包七个小矮人。
 :end
 set /p powerbyheizi=执行完成,按任意键返回主页。
+goto home
+goto home
+goto home
+goto home
+goto home
 goto home
