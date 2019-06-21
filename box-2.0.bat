@@ -1,19 +1,19 @@
 @echo off
 set rf=%~dp0
-cls ::ÎÒÔÚÐ´Õâ¸ö¶«Î÷µÄÊ±ºòÓÐµãÀ§»¹ÓÐµã±ãÃØ£¬ËùÒÔÕâ¸ö½Å±¾¿ÉÄÜÓÖÎÞÁÄÓÖÊº¡£
+cls ::æˆ‘åœ¨å†™è¿™ä¸ªä¸œè¥¿çš„æ—¶å€™æœ‰ç‚¹å›°è¿˜æœ‰ç‚¹ä¾¿ç§˜ï¼Œæ‰€ä»¥è¿™ä¸ªè„šæœ¬å¯èƒ½åˆæ— èŠåˆå±Žã€‚
 if not exist %rf%file\recheche.txt (  
-echo ±¾°æ±¾Î´²âÊÔ
-echo Èç¹û³öÏÖÎÊÌâÇë
+echo æœ¬ç‰ˆæœ¬æœªæµ‹è¯•
+echo å¦‚æžœå‡ºçŽ°é—®é¢˜è¯·
 echo.
 pause
 echo.
-echo ½ØÍ¼ºó£¡£¡£¡
+echo æˆªå›¾åŽï¼ï¼ï¼
 echo.
 pause
 echo.
-echo Ë½ÁÄÈºÖ÷£¡£¡£¡£¡
+echo ç§èŠç¾¤ä¸»ï¼ï¼ï¼ï¼
 echo.
-echo Èç¹ûÃ»ÓÐ½ØÍ¼ÇëÏêÏ¸ÃèÊöÄãÖ´ÐÐÁËÊ²Ã´²Ù×÷
+echo å¦‚æžœæ²¡æœ‰æˆªå›¾è¯·è¯¦ç»†æè¿°ä½ æ‰§è¡Œäº†ä»€ä¹ˆæ“ä½œ
 pause
 echo "1">file\recheche.txt
 )
@@ -25,20 +25,20 @@ goto HOME
 
 :home
 cls
- echo ======================================  ^|      ±¾½Å±¾±àÐ´»·¾³ÊÇ1080p Windows10
- echo =            LG-G7-¹¤¾ß°ü            =  ^|  ¿ÉÄÜÔËÐÐÔÚWindows7ÉÏ¸ñÊ½»á±Àµô ²»¹ý¿´µÃ¶®¾ÍºÃ
+ echo ======================================  ^|      æœ¬è„šæœ¬ç¼–å†™çŽ¯å¢ƒæ˜¯1080p Windows10
+ echo =            LG-G7-å·¥å…·åŒ…            =  ^|  å¯èƒ½è¿è¡Œåœ¨Windows7ä¸Šæ ¼å¼ä¼šå´©æŽ‰ ä¸è¿‡çœ‹å¾—æ‡‚å°±å¥½
  echo =------------------------------------=
-   echo = ÓÉ¡°LG G7 ThinQ À¬»øÀÐ¿ì»îÈº¡±³öÆ· =  ^|      ³öÏÖÈÎºÎÉÁÍËÇë¡°Ë½ÁÄ¡±ÈºÖ÷²¢ÏêÏ¸Ëµ
-echo =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =  ^|  ÃûÔÚÄÄ²½³öÏÖÎÊÌâ£¬Èç¹û³öÏÖ´íÎóÇë½ØÍ¼
+   echo = ç”±â€œLG G7 ThinQ åžƒåœ¾ä½¬å¿«æ´»ç¾¤â€å‡ºå“ =  ^|      å‡ºçŽ°ä»»ä½•é—ªé€€è¯·â€œç§èŠâ€ç¾¤ä¸»å¹¶è¯¦ç»†è¯´
+echo =      ä½œè€…:é»‘å­— ^| ç¾¤å·:620421749    =  ^|  ååœ¨å“ªæ­¥å‡ºçŽ°é—®é¢˜ï¼Œå¦‚æžœå‡ºçŽ°é”™è¯¯è¯·æˆªå›¾
  echo ======================================
  echo.
  echo -------------------------------------------------------
  echo.
- echo ======================================  ^|      A.LGUP £¨Ã»É¶ÓÃ À¨ºÅÉ¾µô£© ÓÐÌæ»»ÆÆ½â°æµÄlgupºÍ
- echo =            ÇëÑ¡ÔñÄ£Ê½              =  ^|  ±¸·Ýµ±Ç°LG UPÖ®ÀàµÄ Ê¹ÓÃ±¾Ä£Ê½ÇëÒÔ¹ÜÀíÔ±Ä£Ê½´ò¿ª¡£
+ echo ======================================  ^|      A.LGUP ï¼ˆæ²¡å•¥ç”¨ æ‹¬å·åˆ æŽ‰ï¼‰ æœ‰æ›¿æ¢ç ´è§£ç‰ˆçš„lgupå’Œ
+ echo =            è¯·é€‰æ‹©æ¨¡å¼              =  ^|  å¤‡ä»½å½“å‰LG UPä¹‹ç±»çš„ ä½¿ç”¨æœ¬æ¨¡å¼è¯·ä»¥ç®¡ç†å‘˜æ¨¡å¼æ‰“å¼€ã€‚
  echo =------------------------------------=
-echo = A.  LGUP       ^| B.  ADB/Fastboot  =  ^|      B.A^/FµÄ¹¤¾ß±È½Ï¶à,ÀýÈç¿ìËÙË¢GSI¡¢ÇÐ»»AB·ÖÇø£¬Ò»¼ü
- echo ======================================  ^|  É¾³ýLaf_aÉ¶µÄ¡£
+echo = A.  LGUP       ^| B.  ADB/Fastboot  =  ^|      B.A^/Fçš„å·¥å…·æ¯”è¾ƒå¤š,ä¾‹å¦‚å¿«é€Ÿåˆ·GSIã€åˆ‡æ¢ABåˆ†åŒºï¼Œä¸€é”®
+ echo ======================================  ^|  åˆ é™¤Laf_aå•¥çš„ã€‚
 set /p goto=(A/B)
 if %goto%==a goto lgup
 if %goto%==A goto lgup
@@ -50,49 +50,49 @@ goto home
 :lgup
 cls
 :lgupchack
-echo ¼ì²é°²×°µØÖ·ÖÐ¡­¡­
-if exist "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe" (echo ³É¹¦) else (
-echo ´íÎó£ºÎ´¼ì²âµ½LGUP£¡
-echo Çë¼ì²é°²×°µØÖ·ÊÇ·ñ´æÔÚ»òÊÖ¶¯¸´ÖÆ¡£
+echo æ£€æŸ¥å®‰è£…åœ°å€ä¸­â€¦â€¦
+if exist "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe" (echo æˆåŠŸ) else (
+echo é”™è¯¯ï¼šæœªæ£€æµ‹åˆ°LGUPï¼
+echo è¯·æ£€æŸ¥å®‰è£…åœ°å€æ˜¯å¦å­˜åœ¨æˆ–æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :end)
 
-echo ¼ì²é±¸·ÝLGUPÊÇ·ñ´æÔÚÖÐ¡­¡­
+echo æ£€æŸ¥å¤‡ä»½LGUPæ˜¯å¦å­˜åœ¨ä¸­â€¦â€¦
 if exist "%rf%file\lgup\LGUPR.exe" (
-echo ´æÔÚ Ìø¹ý±¸·Ý
+echo å­˜åœ¨ è·³è¿‡å¤‡ä»½
 goto uhome ) 
-echo ²»´æÔÚ
+echo ä¸å­˜åœ¨
 goto ubackup
 
 :ubackup
-echo LG UP.exe±¸·ÝÖÐ
+echo LG UP.exeå¤‡ä»½ä¸­
 copy "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"  "%rf%file\lgup\LGUPR.exe"
 if not errorlevel 1 goto uhome
 echo.
-echo ´íÎó:lG UP.exe¸´ÖÆ²»³É¹¦
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹û¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:lG UP.exeå¤åˆ¶ä¸æˆåŠŸ
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
 
 :uhome
 cls
-echo Ò»¸öÉùÃ÷
-echo ±¾½Å±¾ÐÞ¸Ä×Ôhttps://forum.xda-developers.com/android/general/tecknights-aristo-2-tutorials-t3805141/page3
+echo ä¸€ä¸ªå£°æ˜Ž
+echo æœ¬è„šæœ¬ä¿®æ”¹è‡ªhttps://forum.xda-developers.com/android/general/tecknights-aristo-2-tutorials-t3805141/page3
 echo.
-choice /m "Ò»ÃëÖÓºó¾Í»áÌø×ª"  /c tecknighs /t 1 /d t
+choice /m "ä¸€ç§’é’ŸåŽå°±ä¼šè·³è½¬"  /c tecknighs /t 1 /d t
 cls
 echo.
 echo ======================================
-echo =             LGUP¹¤¾ß°ü             =
+echo =             LGUPå·¥å…·åŒ…             =
 echo =------------------------------------=
-echo = ÓÉ¡°LG G7 ThinQ À¬»øÀÐ¿ì»îÈº¡±³öÆ· =
-echo =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =
+echo = ç”±â€œLG G7 ThinQ åžƒåœ¾ä½¬å¿«æ´»ç¾¤â€å‡ºå“ =
+echo =      ä½œè€…:é»‘å­— ^| ç¾¤å·:620421749    =
 echo ======================================
 echo.
 echo ======================================
-echo =               ÇëÑ¡Ôñ               =
+echo =               è¯·é€‰æ‹©               =
 echo =------------------------------------=
-echo = 1. ¹¾¹¾¹¾¹¾¹¾¹¾ ^| 2. ÆÆ½âLGUP      =
+echo = 1. å’•å’•å’•å’•å’•å’• ^| 2. ç ´è§£LGUP      =
 echo =------------------------------------=
-echo = 3. »¹Ô­LGUP     ^| 4.^*Á÷²úÏîÄ¿^*     =
+echo = 3. è¿˜åŽŸLGUP     ^| 4.^*æµäº§é¡¹ç›®^*     =
 echo ======================================
 set /p lgupmode=^(1-4^)
 if %lgupmode%==1 goto unoob
@@ -101,106 +101,106 @@ if %lgupmode%==3 goto uru
 if %lgupmode%==4 goto ucd
 
 :unoob
-echo ¹¾¹¾¹¾
+echo å’•å’•å’•
 goto uend
 
 :ubu 
 copy "%rf%file\lgup\LGUPD.exe" "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 if not errorlevel 1 ( 
 echo.
-echo LGUP.exe¸´ÖÆ³É¹¦
+echo LGUP.exeå¤åˆ¶æˆåŠŸ
 echo.
 goto ubu-d
 )
 cls
 echo.
-echo ´íÎó:lGUP.exe¸´ÖÆ²»³É¹¦
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹ûÔÙ¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:lGUP.exeå¤åˆ¶ä¸æˆåŠŸ
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå†å¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
 
 :ubu-d
 if not exist "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\" md "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\"
 if not errorlevel 1 ( 
 copy "%rf%file\lgup\LGUP_CommonD.dll" "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\LGUP_Common.dll"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 echo.
-echo dll¸´ÖÆ³É¹¦
+echo dllå¤åˆ¶æˆåŠŸ
 echo.
 goto uend
 )
 echo.
-echo ´íÎó:dll¸´ÖÆ²»³É¹¦
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹ûÔÙ¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:dllå¤åˆ¶ä¸æˆåŠŸ
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå†å¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
 
 :uru
 copy "%rf%file\lgup\LGUPR.exe" "%ProgramFiles(x86)%\LG Electronics\LGUP\LGUP.exe"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 if not errorlevel 1 ( 
 echo.
-echo LGUP.exe¸´ÖÆ³É¹¦
+echo LGUP.exeå¤åˆ¶æˆåŠŸ
 echo.
 goto ucu-d
 )
 cls
 echo.
-echo ´íÎó:lGUP.exe¸´ÖÆ²»³É¹¦
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹ûÔÙ¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:lGUP.exeå¤åˆ¶ä¸æˆåŠŸ
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå†å¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
 
 :ucu-d
 del "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\LGUP_Common.dll"
 rd "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 if not errorlevel 1 ( 
 echo.
-echo dllÉ¾³ý³É¹¦
+echo dllåˆ é™¤æˆåŠŸ
 echo.
 goto uend
 )
 cls
 echo.
-echo ´íÎó:dllÉ¾³ýÊ§°Ü
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹ûÔÙ¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:dllåˆ é™¤å¤±è´¥
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå†å¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
 
 :ucd
-echo Èç¹ûÄãÊÇbat¸ßÊÖÇë°ïÎÒÐÞ¸ÄÒ»ÏÂ½Å±¾
+echo å¦‚æžœä½ æ˜¯baté«˜æ‰‹è¯·å¸®æˆ‘ä¿®æ”¹ä¸€ä¸‹è„šæœ¬
 goto uend
-::ÕâÊÇÒ»¸ö¸´ÖÆÎÄ¼þµÄ
-echo ÊäÈëYÊ¹ÓÃÍ¨ÓÃdll»ò ½«ÒªË¢µÄdllÍÏ½ø±¾´°¿ÚÄÚ¡£
+::è¿™æ˜¯ä¸€ä¸ªå¤åˆ¶æ–‡ä»¶çš„
+echo è¾“å…¥Yä½¿ç”¨é€šç”¨dllæˆ– å°†è¦åˆ·çš„dllæ‹–è¿›æœ¬çª—å£å†…ã€‚
 set /p ucd=
 if "%ucd%"=="y" ( 
 copy "%rf%file\lgup\LGUP_CommonD.dll" "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\LGUP_Common.dll"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 if not errorlevel 1 ( 
 echo.
-echo dll¸´ÖÆ³É¹¦
+echo dllå¤åˆ¶æˆåŠŸ
 echo.
 goto uend
 )
 cls
 echo.
-echo ´íÎó:lG UP.exe¸´ÖÆ²»³É¹¦
-echo ÇëÒÔ¹ÜÀíÕßÔËÐÐ¸Ã½Å±¾£¬Èç¹û¸´ÖÆ²»³É¹¦ÇëÊÖ¶¯¸´ÖÆ¡£
+echo é”™è¯¯:lG UP.exeå¤åˆ¶ä¸æˆåŠŸ
+echo è¯·ä»¥ç®¡ç†è€…è¿è¡Œè¯¥è„šæœ¬ï¼Œå¦‚æžœå¤åˆ¶ä¸æˆåŠŸè¯·æ‰‹åŠ¨å¤åˆ¶ã€‚
 goto :uend
-£© else ( 
+ï¼‰ else ( 
 copy %ucd% "%ProgramFiles(x86)%\LG Electronics\LGUP\model\common\LGUP_Common.dll"
-echo Ö¸ÁîÖ´ÐÐÍê³É
+echo æŒ‡ä»¤æ‰§è¡Œå®Œæˆ
 if not errorlevel 1 ( 
 echo.
-echo dll¸´ÖÆ³É¹¦
+echo dllå¤åˆ¶æˆåŠŸ
 echo.
 goto uend
 )
 
 :uend
 echo ..................
-echo H.»Øµ½Ö÷Ò³
-echo L.»Øµ½LG UP¹¤¾ß°ü
-echo A.ADB¹¤¾ß°ü
-echo X.¹Ø±Õ
+echo H.å›žåˆ°ä¸»é¡µ
+echo L.å›žåˆ°LG UPå·¥å…·åŒ…
+echo A.ADBå·¥å…·åŒ…
+echo X.å…³é—­
 echo ..................
 set /p end=^(H/L/A/X^)
 if "%end%"=="h" goto home
@@ -213,35 +213,35 @@ goto end-this-shit
 :af
 if not exist "%rf%\file\adb\adb.exe" (
 echo.
-echo ´íÎó:
-echo Î´ÕÒµ½adb.exe£¬ÇëÏÂÔØÍêÕû°ü¡£
+echo é”™è¯¯:
+echo æœªæ‰¾åˆ°adb.exeï¼Œè¯·ä¸‹è½½å®Œæ•´åŒ…ã€‚
 ) else (
-echo ³É¹¦ÕÒµ½adb.exe
+echo æˆåŠŸæ‰¾åˆ°adb.exe
 set adb="%rf%\file\adb\adb.exe")
 if not exist "%rf%file\adb\fastboot.exe" (
 echo.
-echo ´íÎó:
-echo Î´ÕÒµ½fastboot.exe£¬ÇëÏÂÔØÍêÕû°ü¡£
+echo é”™è¯¯:
+echo æœªæ‰¾åˆ°fastboot.exeï¼Œè¯·ä¸‹è½½å®Œæ•´åŒ…ã€‚
 goto aname
 ) else (
-echo ³É¹¦ÕÒµ½fastboot.exe
+echo æˆåŠŸæ‰¾åˆ°fastboot.exe
 set fastboot="%rf%file\adb\fastboot.exe"
 goto ahome)
 
 :aname
 echo ==================================================
-echo Èç¹ûÄãÓÐadb¹¤¾ß°üÇëÊäÈëY£¬Ã»ÓÐÔò¹Ø±Õ±¾´°¿Ú¡£
+echo å¦‚æžœä½ æœ‰adbå·¥å…·åŒ…è¯·è¾“å…¥Yï¼Œæ²¡æœ‰åˆ™å…³é—­æœ¬çª—å£ã€‚
 set /p check=
 if %check%=="y" ( goto reseta ) else ( goto reseta)
 
 :reseta
 echo ==================================================
-echo Çë½«adb.exeÍÏÈë±¾´°¿ÚÄÚ
+echo è¯·å°†adb.exeæ‹–å…¥æœ¬çª—å£å†…
 set /p adb=
 
 :resetf
 echo ==================================================
-echo Çë½«fastboot.exeÍÏÈë±¾´°¿ÚÄÚ
+echo è¯·å°†fastboot.exeæ‹–å…¥æœ¬çª—å£å†…
 set /p fastboot= 
 
 
@@ -252,33 +252,33 @@ cls
 %adb% kill-server
 cls
  echo  ======================================   ^+----------------------------------^+   
- echo  =          ADB/Fastboot¹¤¾ß°ü        =   ^| Ê¹ÓÃadbÖ¸ÁîÇëµ½ÉèÖÃÖÐ¿ªÆôUSBµ÷ÊÔ ^|   ÎÒÖªµÀÕâºÜÂÒ
- echo  =------------------------------------=   ^| ²¢½«USBÓÃÓÚ½ö³äµç¡£              ^|   ´ÕºÏ×Å¿´°É
-   echo  = ÓÉ¡°LG G7 ThinQ À¬»øÀÐ¿ì»îÈº¡±³öÆ· =   ^+----------------------------------^+   (Ê®·ÖÖÓºó)
-echo  =      ×÷Õß:ºÚ×Ö ^| ÈººÅ:620421749    =   ^| Ê¹ÓÃFastbootÖ¸ÁîÇë½«ÊÖ»úÖØÆôÖÁ   ^|   ÎÒ²»Ïë×öÁË
- echo  ======================================   ^| FastbootÄ£Ê½¡£                   ^|   ºýÅªÒ»ÏÂÄãÃÇËãÁË
- echo                                           ^+----------------------------------^+   £¨¿Þ£©
+ echo  =          ADB/Fastbootå·¥å…·åŒ…        =   ^| ä½¿ç”¨adbæŒ‡ä»¤è¯·åˆ°è®¾ç½®ä¸­å¼€å¯USBè°ƒè¯• ^|   æˆ‘çŸ¥é“è¿™å¾ˆä¹±
+ echo  =------------------------------------=   ^| å¹¶å°†USBç”¨äºŽä»…å……ç”µã€‚              ^|   å‡‘åˆç€çœ‹å§
+   echo  = ç”±â€œLG G7 ThinQ åžƒåœ¾ä½¬å¿«æ´»ç¾¤â€å‡ºå“ =   ^+----------------------------------^+   (ååˆ†é’ŸåŽ)
+echo  =      ä½œè€…:é»‘å­— ^| ç¾¤å·:620421749    =   ^| ä½¿ç”¨FastbootæŒ‡ä»¤è¯·å°†æ‰‹æœºé‡å¯è‡³   ^|   æˆ‘ä¸æƒ³åšäº†
+ echo  ======================================   ^| Fastbootæ¨¡å¼ã€‚                   ^|   ç³Šå¼„ä¸€ä¸‹ä½ ä»¬ç®—äº†
+ echo                                           ^+----------------------------------^+   ï¼ˆå“­ï¼‰
   echo  ^+------------------------------------^+  
-  echo  ^|       ADBÖ¸Áî-ÎÞÐèROOT/TWRPÇø      ^|   ^+----------------------------------^+  ÌáÊ¾£º
-  echo  ^+---------------^+--------------------^+   ^|            FastbootÖ¸ÁîÇø        ^|  ½øÈëFastbootµÄ·½·¨
- echo  ^| A1. Ê±¼äÍ¬²½  ^| A2. Òþ²Øµ¼º½À¸     ^|   ^+---------------^+------------------^+  1.¹Ø»ú 2.°´×¡ÒôÁ¿ÏÂ
-  echo  ^+---------------^+-----^+--------------^+   ^| F1. Ë¢boot    ^| F2. ÇÐ»»AB·ÖÇø   ^|  3.²åÈëÁ¬½ÓµçÄÔµÄÊý¾ÝÏß
- echo  ^| A3. Ò»¼ü½ûÓÃÏµÍ³Èí¼þ^| A4. ADBÖØÆô  ^|   ^+---------------^+-^+----------------^+
-  echo  ^+------------------------------------^+   ^| F3. ÍêÈ«Ë¢ÈëGSI ^| F.4Ö»Ë¢System  ^|
-  echo  ^| ±£Áô                               ^|   ^+-----------------^+----------------^+  £¡
-  echo  ^+------------------------------------^+   ^| ±£Áô                             ^|    Ê¹ÓÃ¸ÃÄ£Ê½Çë²»ÒªÒÔ¹ÜÀíÔ±Ä£Ê½´ò¿ª
-  echo  ^| ±£Áô                               ^|   ^|----------------------------------^+
-  echo  ^+------------------------------------^+   ^| ±£Áô                             ^|
+  echo  ^|       ADBæŒ‡ä»¤-æ— éœ€ROOT/TWRPåŒº      ^|   ^+----------------------------------^+  æç¤ºï¼š
+  echo  ^+---------------^+--------------------^+   ^|            FastbootæŒ‡ä»¤åŒº        ^|  è¿›å…¥Fastbootçš„æ–¹æ³•
+ echo  ^| A1. æ—¶é—´åŒæ­¥  ^| A2. éšè—å¯¼èˆªæ      ^|   ^+---------------^+------------------^+  1.å…³æœº 2.æŒ‰ä½éŸ³é‡ä¸‹
+  echo  ^+---------------^+-----^+--------------^+   ^| F1. åˆ·boot    ^| F2. åˆ‡æ¢ABåˆ†åŒº   ^|  3.æ’å…¥è¿žæŽ¥ç”µè„‘çš„æ•°æ®çº¿
+ echo  ^| A3. ä¸€é”®ç¦ç”¨ç³»ç»Ÿè½¯ä»¶^| A4. ADBé‡å¯  ^|   ^+---------------^+-^+----------------^+
+  echo  ^+------------------------------------^+   ^| F3. å®Œå…¨åˆ·å…¥GSI ^| F.4åªåˆ·System  ^|
+  echo  ^| ä¿ç•™                               ^|   ^+-----------------^+----------------^+  ï¼
+  echo  ^+------------------------------------^+   ^| ä¿ç•™                             ^|    ä½¿ç”¨è¯¥æ¨¡å¼è¯·ä¸è¦ä»¥ç®¡ç†å‘˜æ¨¡å¼æ‰“å¼€
+  echo  ^| ä¿ç•™                               ^|   ^|----------------------------------^+
+  echo  ^+------------------------------------^+   ^| ä¿ç•™                             ^|
    echo                                           ^+----------------------------------^+
   echo  ^+-------------------------------------^+----------------^+--------------------^+
-  echo  ^|       ADBÖ¸Áî-ROOT/TWRPÇø           ^| R1. laf_aÉ±ÊÖ  ^| R2. ÎÞÏÞÖØÆô½øTWRP ^|
+  echo  ^|       ADBæŒ‡ä»¤-ROOT/TWRPåŒº           ^| R1. laf_aæ€æ‰‹  ^| R2. æ— é™é‡å¯è¿›TWRP ^|
   echo  ^+-------------------------------------^+----------------^+--------------------^+
-  echo  ^| R3. TWRPÏßË¢ZipË¢»ú°ü                                                     ^|
+  echo  ^| R3. TWRPçº¿åˆ·Zipåˆ·æœºåŒ…                                                     ^|
   echo  ^+---------------------------------------------------------------------------^+
-  echo  ^| ±£Áô                                                                      ^|
+  echo  ^| ä¿ç•™                                                                      ^|
   echo  ^+---------------------------------------------------------------------------^+
   echo. 
-  echo ÇëÑ¡Ôñ¡­¡­
+  echo è¯·é€‰æ‹©â€¦â€¦
 set /p mode=^(F1-4/A1-4/R1-3^)
 if %mode%==f1 goto flash-boot
 if %mode%==f2 goto ActiveSLOT
@@ -309,84 +309,84 @@ if %mode%==R2 goto shitloop
 if %mode%==R3 goto sideload
 
 :chucefial
-echo ×ß´íÂ·ÁËÐÖ‡N
+echo èµ°é”™è·¯äº†å…„å˜š
 goto end
 
-:adb Ä£°å
+:adb æ¨¡æ¿
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| Ê±¼äÍ¬²½                           ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| æ—¶é—´åŒæ­¥                           ^|    å¼€å¯USBè°ƒè¯•
   echo  ^+------------------------------------^+
   
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
-:twrp Ä£°å
+:twrp æ¨¡æ¿
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| Ê±¼äÍ¬²½                           ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| æ—¶é—´åŒæ­¥                           ^|    è¿›å…¥TWRPå¹¶è¿žæŽ¥ä¸Šç”µè„‘
   echo  ^+------------------------------------^+
   
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 
 :ntpsetting
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| Ê±¼äÍ¬²½                           ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| æ—¶é—´åŒæ­¥                           ^|    å¼€å¯USBè°ƒè¯•
   echo  ^+------------------------------------^+
 %adb% shell settings put global ntp_server ntp1.aliyun.com
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 :navbarhider
 if %recheche%==3  (
 cls
-echo ÊäÈëÏÂ³ÁÊýÖµ ÈçÐèÍË³ö Çë¹Ø±Õ¡£
+echo è¾“å…¥ä¸‹æ²‰æ•°å€¼ å¦‚éœ€é€€å‡º è¯·å…³é—­ã€‚
 set /p overscan=
 %adb% shell wm overscan 0,0,0,-%overscan%
 goto navbarhider
 )
 set recheche=1
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| Òþ²Øµ¼º½À¸                         ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| éšè—å¯¼èˆªæ                          ^|    å¼€å¯USBè°ƒè¯•
   echo  ^+------------------------------------^+
-  echo  C:³Á½þÄ£Ê½£¬ÀàËÆÓÚ¡°È«ÆÁ¡±µÄÐ§¹û¡£Q:È¡Ïû³Á½þ
-  echo  X:½«µ¼º½À¸ÉèÖÃµ½ÏÔÊ¾ÇøÓòÖ®Íâ£¬ÊÊÓÃÓÚÊÖÊÆ¡£
+  echo  C:æ²‰æµ¸æ¨¡å¼ï¼Œç±»ä¼¼äºŽâ€œå…¨å±â€çš„æ•ˆæžœã€‚Q:å–æ¶ˆæ²‰æµ¸
+  echo  X:å°†å¯¼èˆªæ è®¾ç½®åˆ°æ˜¾ç¤ºåŒºåŸŸä¹‹å¤–ï¼Œé€‚ç”¨äºŽæ‰‹åŠ¿ã€‚
   choice /c cqx
 if %errorlevel%==1 %adb% shell settings put global policy_control immersive.navigation=*
 if %errorlevel%==2 %adb% shell settings put global policy_control null
 if %errorlevel%==3 (
      echo.
-     echo  ²»Í¬µÄ·Ö±æÂÊÓÐ²»Í¬µÄÐ§¹û
-     echo  1.1080p 2.2k 3.×ÔÐÐÊäÈë²ÎÊý 4.»Ö¸´
+     echo  ä¸åŒçš„åˆ†è¾¨çŽ‡æœ‰ä¸åŒçš„æ•ˆæžœ
+     echo  1.1080p 2.2k 3.è‡ªè¡Œè¾“å…¥å‚æ•° 4.æ¢å¤
      choice /c 1234
      if %errorlevel%==1 %adb% shell wm overscan 0,0,0,-143
      if %errorlevel%==2 %adb% shell wm overscan 0,0,0,-191
      if %errorlevel%==3 (
 	     cls
-         echo ÊäÈëÏÂ³ÁÊýÖµ
+         echo è¾“å…¥ä¸‹æ²‰æ•°å€¼
          set /p overscan=
           %adb% shell wm overscan 0,0,0,-%overscan%
      )
      if %errorlevel%==4 %adb% shell wm overscan reset
 )
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 set recheche=3
 goto navbarhider
 
 :fuckthelgsoftweare
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| ½ûÓÃÓ¦ÓÃ                           ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| ç¦ç”¨åº”ç”¨                           ^|    å¼€å¯USBè°ƒè¯•
   echo  ^+------------------------------------^+
-  choice /c dj /m "D¶³½á J½â¶³"
+  choice /c dj /m "Då†»ç»“ Jè§£å†»"
   if %errorlevel%==1 set frozen=disable-user
   if %errorlevel%==2 set frozen=enable
 %adb% shell pm %frozen% com.lge.quicktools
@@ -489,33 +489,33 @@ cls
 %adb% shell pm %frozen% com.google.android.gms
 %adb% shell pm %frozen% com.google.android.feedback
 %adb% shell pm %frozen% com.google.android.backuptransport
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 :noobreboot
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| ADBÖØÆô                            ^|    ¿ªÆôUSBµ÷ÊÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| ADBé‡å¯                            ^|    å¼€å¯USBè°ƒè¯•
   echo  ^+------------------------------------^+
-  echo  E. ÆÕÍ¨ÖØÆô  R. RecoveryÄ£Ê½  
-  echo  B. ¿ÉÄÜ»áÖØÆô½øFastboot
+  echo  E. æ™®é€šé‡å¯  R. Recoveryæ¨¡å¼  
+  echo  B. å¯èƒ½ä¼šé‡å¯è¿›Fastboot
   choice /c erb
   if %errorlevel%==1 %adb% reboot
   if %errorlevel%==2 %adb% reboot recovery
   if %errorlevel%==3 %adb% reboot bootloader
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 :lafakiller
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| laf_aÉ±ÊÖ                          ^|    ¿ªÆôUSBµ÷ÊÔ»ò
-  echo  ^+------------------------------------^+    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
-  echo  Èý¼üÖ®ÄÚÉ±ÁËÄã 
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| laf_aæ€æ‰‹                          ^|    å¼€å¯USBè°ƒè¯•æˆ–
+  echo  ^+------------------------------------^+    è¿›å…¥TWRPå¹¶è¿žæŽ¥ä¸Šç”µè„‘
+  echo  ä¸‰é”®ä¹‹å†…æ€äº†ä½  
   echo.
-  echo  ÇëÁôÒâRootÈ¨ÏÞÉêÇë
+  echo  è¯·ç•™æ„Rootæƒé™ç”³è¯·
   pause
   %adb% shell "su -c 'dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a of=/sdcard/laf_a_backup.img'"
   %adb% shell "su -c 'dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_b of=/sdcard/laf_b_backup.img'"
@@ -523,38 +523,38 @@ cls
   %adb% pull /sdcard/laf_b_backup.img %rf%\file\lafbackup\laf_b_backup.img
   %adb% shell "touch /sdcard/laf_a
   %adb% shell "su -c 'dd if=/sdcard/laf_a of=/dev/block/platform/soc/1d84000.ufshc/by-name/laf_a'"
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 :shitloop
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| ÎÞÏÞÖØÆô½øTWRP                     ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| æ— é™é‡å¯è¿›TWRP                     ^|    è¿›å…¥TWRPå¹¶è¿žæŽ¥ä¸Šç”µè„‘
   echo  ^+------------------------------------^+
   pause
   %adb% shell dd if=/dev/zero of=/dev/block/bootdevice/by-name/misc bs=256 count=1 conv=notrunc
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
 goto end
 
 :sideload
 if recheche=
 cls
-  echo  ^+------------------------------------^+  £¡ÇëÈ·ÈÏÄãÒÑ¾­
-  echo  ^| TWRPÏßË¢ZipË¢»ú°ü                  ^|    ½øÈëTWRP²¢Á¬½ÓÉÏµçÄÔ
+  echo  ^+------------------------------------^+  ï¼è¯·ç¡®è®¤ä½ å·²ç»
+  echo  ^| TWRPçº¿åˆ·Zipåˆ·æœºåŒ…                  ^|    è¿›å…¥TWRPå¹¶è¿žæŽ¥ä¸Šç”µè„‘
   echo  ^+------------------------------------^+
-  echo  Çë½øÈëTWRPºóµã»÷¡°¸ß¼¶/Advanced¡±Ñ¡Ôñ¡°
-  echo  ADB Sideload¡±ºó»¬¶¯ÏÂ·½µÄ°´Å¥
+  echo  è¯·è¿›å…¥TWRPåŽç‚¹å‡»â€œé«˜çº§/Advancedâ€é€‰æ‹©â€œ
+  echo  ADB Sideloadâ€åŽæ»‘åŠ¨ä¸‹æ–¹çš„æŒ‰é’®
   pause
-  echo  Çë°ÑÒªË¢µÄË¢»ú°üÍÏÈë±¾´°¿Ú
+  echo  è¯·æŠŠè¦åˆ·çš„åˆ·æœºåŒ…æ‹–å…¥æœ¬çª—å£
   set /p sideload=
   %adb% sideload %sideload%
   set recheche=2
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
-  echo  Ö´ÐÐÍê±Ï
-  echo  ÈçÐèÍË³öÇë¹Ø±Õ´°¿Ú
-  echo  Çë°ÑÒªË¢µÄË¢»ú°üÍÏÈë±¾´°¿Ú
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
+  echo  æ‰§è¡Œå®Œæ¯•
+  echo  å¦‚éœ€é€€å‡ºè¯·å…³é—­çª—å£
+  echo  è¯·æŠŠè¦åˆ·çš„åˆ·æœºåŒ…æ‹–å…¥æœ¬çª—å£
   set /p sideload=
   %adb% sideload %sideload%
 goto sideload
@@ -562,27 +562,27 @@ goto sideload
 :flash-boot
 cls
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢µÄBoot.imgÍÏÈë´°¿Ú         ^|
+  echo  ^| è¯·æŠŠè¦åˆ·çš„Boot.imgæ‹–å…¥çª—å£         ^|
   echo  ^+------------------------------------^+
 set /p bootfile=
 %fastboot% flash boot_a %bootfile%
 %fastboot% flash boot_b %bootfile%
-  echo  Ö´ÐÐÍê±Ï
-  echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+  echo  æ‰§è¡Œå®Œæ¯•
+  echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
 goto end
 
 
 :ActiveSLOT
 cls
   echo  ^+------------------------------------^+
-  echo  ^| ÇÐ»»AB·ÖÇøÄ£Ê½                     ^|
+  echo  ^| åˆ‡æ¢ABåˆ†åŒºæ¨¡å¼                     ^|
   echo  ^+------------------------------------^+
-  echo  ÄãÒª¼¤»îÄÄ¸ö·ÖÇø£¿
+  echo  ä½ è¦æ¿€æ´»å“ªä¸ªåˆ†åŒºï¼Ÿ
 choice /c ab
 if %errorlevel%==1 %fastboot% --set-active=a
 if %errorlevel%==2 %fastboot% --set-active=b
-echo Ö´ÐÐÍê±Ï
-echo ÊÇ·ñÖØÆôÊÖ»ú£¿
+echo æ‰§è¡Œå®Œæ¯•
+echo æ˜¯å¦é‡å¯æ‰‹æœºï¼Ÿ
 choice /c yn
 if %errorlevel%==1 %fastboot% reboot
 if %errorlevel%==2 goto end
@@ -591,31 +591,31 @@ goto end
 :flash-gsi
 cls
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢vbmeta.imgµÄÍÏÈë´°¿Ú       ^|
+  echo  ^| è¯·æŠŠè¦åˆ·vbmeta.imgçš„æ‹–å…¥çª—å£       ^|
   echo  ^+------------------------------------^+
 set /p vbmetafile=
 %fastboot%  --disable-verity --disable-verification flash vbmeta_a %vbmetafile%
-  echo  Ö´ÐÐÍê±Ï
+  echo  æ‰§è¡Œå®Œæ¯•
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢boot.imgµÄÍÏÈë´°¿Ú         ^|
+  echo  ^| è¯·æŠŠè¦åˆ·boot.imgçš„æ‹–å…¥çª—å£         ^|
   echo  ^+------------------------------------^+
 set /p bootfile=
 %fastboot%  --set-active=a flash boot_a %bootfile%
-  echo  Ö´ÐÐÍê±Ï
+  echo  æ‰§è¡Œå®Œæ¯•
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢vendor.imgµÄÍÏÈë´°¿Ú       ^|
+  echo  ^| è¯·æŠŠè¦åˆ·vendor.imgçš„æ‹–å…¥çª—å£       ^|
   echo  ^+------------------------------------^+
 set /p vendorfile=
 %fastboot%  flash vendor_a %vendorfile%
-  echo  Ö´ÐÐÍê±Ï
+  echo  æ‰§è¡Œå®Œæ¯•
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢System.imgµÄÍÏÈë´°¿Ú       ^|
+  echo  ^| è¯·æŠŠè¦åˆ·System.imgçš„æ‹–å…¥çª—å£       ^|
   echo  ^+------------------------------------^+
 set /p systemfile=
 %fastboot% flash system_a %systemfile%
   %fastboot% -w reboot
-  echo  ¡£¡£¡£ÖØÆôÖÐ
-  echo  Ö´ÐÐÍê±Ï  
+  echo  ã€‚ã€‚ã€‚é‡å¯ä¸­
+  echo  æ‰§è¡Œå®Œæ¯•  
 goto end
 
 
@@ -624,21 +624,21 @@ goto end
 :flash-system
 cls
   echo  ^+------------------------------------^+
-  echo  ^| Çë°ÑÒªË¢µÄSystem.imgÍÏÈë´°¿Ú       ^|
+  echo  ^| è¯·æŠŠè¦åˆ·çš„System.imgæ‹–å…¥çª—å£       ^|
   echo  ^+------------------------------------^+
 set /p systemfile=
 %fastboot%  --disable-verity --disable-verification flash system_a %systemfile%
-choice /c yn /m "Çå³ýÊý¾Ý£¿^(ÍÆ¼öÇå³ý^)"
+choice /c yn /m "æ¸…é™¤æ•°æ®ï¼Ÿ^(æŽ¨èæ¸…é™¤^)"
 if %errorlevel%==1 (
      %fastboot% -w reboot
-     echo  ¡£¡£¡£ÖØÆôÖÐ
-	 echo  Ö´ÐÐÍê±Ï
-     echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+     echo  ã€‚ã€‚ã€‚é‡å¯ä¸­
+	 echo  æ‰§è¡Œå®Œæ¯•
+     echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
      goto end
   )
 if %errorlevel%==2 (
-echo  Ö´ÐÐÍê±Ï
-echo  ³öÉ¶ÎÊÌâ½ØÍ¼ÔÙÎÊ
+echo  æ‰§è¡Œå®Œæ¯•
+echo  å‡ºå•¥é—®é¢˜æˆªå›¾å†é—®
 goto end
 )
 
