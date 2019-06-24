@@ -21,7 +21,7 @@ echo.
 echo.
 echo -------------------------------------------------------------------------------
 choice /m "ÇëÑ¡Ôñ" /c 12
-echo powerbyheizi>lgup.off
+echo poweredbyheizi>lgup.off
 if %errorlevel%==1 goto start-lgup-check
 if %errorlevel%==2 goto home-check
 goto end
@@ -36,7 +36,7 @@ echo ÕıÔÚÇëÇó¹ÜÀíÔ±È¨ÏŞ...
 echo -------------------------------------------------------------------------------
 echo ±¾½Å±¾ĞŞ¸Ä×Ôhttps://forum.xda-developers.com/android/general/tecknights-aristo-2-tutorials-t3805141/page3
 echo -------------------------------------------------------------------------------
-echo powerbyheizi>%rf%lgup.on
+echo poweredbyheizi>%rf%lgup.on
 goto UACPrompt
 ) else ( goto start-lgup-checks )
 :UACPrompt
@@ -90,7 +90,7 @@ echo ---------------------------------------------------------------------------
 goto lgup-end-error
 )
 :start-lgup
-echo powerbyheizi>%rf%lgup.off
+echo poweredbyheizi>%rf%lgup.off
 title ÀÁÈË¹¤¾ßºĞ - ÆÆ½âLGUP
 cls
 echo PowerBy-HEIZI ÀÁÈË¹¤¾ßºĞ V2.0.%number% 
@@ -173,7 +173,7 @@ if exist %rf%lgup.off del %rf%lgup.off
 if exist %rf%lgup.on del %rf%lgup.on
 echo -------------------------------------------------------------------------------
 :lgup-end
-set /p powerbyheizi=µã»÷ÈÎÒâ¼üÍË³ö½Å±¾
+set /p poweredbyheizi=µã»÷ÈÎÒâ¼üÍË³ö½Å±¾
 exit /B 
 :home-check
 title ÀÁÈË¹¤¾ßºĞ - ¼ì²âÎÄ¼ş adb 
@@ -221,33 +221,100 @@ echo       1. Ò»¼üÊ½ÓÅ»¯¹Ù·½ÏµÍ³ ^£¨½ûÓÃÏµÍ³Ó¦ÓÃ¡¢Ê±¼äÍ¬²½¡¢Òş²Øµ¼º½À¸¡¢ÖØÆô¡£^£
 echo.
 echo       2. Ë¢ÈëBOOT         3. ÇĞ»»AB·ÖÇø
 echo.
-echo       4. Ë¢ÈëGSI          5. Òş²Ø²Ëµ¥
+echo       4. Ë¢ÈëGSI          9. ¸ß¼¶²Ëµ¥
 echo.
 echo.
 echo -------------------------------------------------------------------------------
-choice /m "ÇëÑ¡Ôñ" /c 12
+choice /m "ÇëÑ¡Ôñ" /c 12349
 if %errorlevel%==1 set mode=stock
 if %errorlevel%==2 set mode=boot
-echo -------------------------------------------------------------------------------
-for /f %%i in ('fastboot devices -l') do echo %%i>0
-if not exist 0 (
-echo µÈ´ıÉè±¸ÖĞ¡­¡­
-%fastboot% 
-) else (
-del 0
-echo ¼ì²âµ½Éè±¸"%%i" 
-)
-echo -------------------------------------------------------------------------------
-pause
+if %errorlevel%==3 set mode=slot
+if %errorlevel%==4 set mode=GSI
+if %errorlevel%==5 goto hide
 cls
+title ÀÁÈË¹¤¾ßºĞ 
+cls
+echo PowerBy-HEIZI ÀÁÈË¹¤¾ßºĞ V2.0.%number% 
+echo -------------------------------------------------------------------------------
+if mode=stock goto adb-devices
+:fastboot-devices
+if exist "%rf%0" del 0
+for /f %%i in ('%fastboot% devices -l') do echo %%i>0
+if not exist 0 (
+set /p  poweredbyheizi=µÈ´ıÉè±¸ÖĞ¡­¡­Çë½«ÄúµÄÉè±¸ÖØÆôµ½fastbootÄ£Ê½ºó°´ÈÎÒâ¼ü¼ÌĞø¡­¡­
+echo -------------------------------------------------------------------------------
+%fastboot% devices
+goto fastboot-devices
+) else (
+for /f %%i in (0) do set device=%%i 
+del 0
+)
+echo ¼ì²âµ½Éè±¸"%device%" 
+echo -------------------------------------------------------------------------------
+if mode=boot goto flash-boot
+if mode=slot goto slot-active
+if mode=GSI goto GSI-flasher
+goto end-wrong
+:adb-devices
+echo µÈ´ıÉè±¸ÖĞ¡­¡­Çë½«ÄúµÄÉè±¸²åÈëµçÄÔ¡­¡­
+echo -------------------------------------------------------------------------------
+%adb% wait-for-device
+for /f %%i in ('adb devices') do set device=%%i
+echo ¼ì²âµ½Éè±¸"%device%" 
+goto end-wrong
+echo -------------------------------------------------------------------------------
+if mode=stock goto adb-devices
+goto end-wrong
+:hide
+title ÀÁÈË¹¤¾ßºĞ - ¸ß¼¶Ä£Ê½
+cls
+echo PowerBy-HEIZI ÀÁÈË¹¤¾ßºĞ V2.0.%number% 
+echo -------------------------------------------------------------------------------
+echo ÈçÄãËù¼û£¬ÕâÀï·Ç³£geek£¡
+echo -------------------------------ADB-·ÖÇø----------------------------------------
+echo.
+echo 		1.Ê±¼äÍ¬²½		2.Òş²Øµ¼º½À¸		3.½ûÓÃÈí¼ş		4.ADBÖØÆô
+echo.
+echo -------------------------------TWRP-·ÖÇø---------------------------------------
+echo.
+echo 				1.ÎŞÏŞTWRPÑ­»·				2.ÏßË¢ZIP°ü
+echo.
+echo -----------------------------Fastboot-·ÖÇø-------------------------------------
+echo.
+echo 			1.ÇĞ»»ÏµÍ³²Û	2.Ë¢ÈëÈÎÒâ·ÖÇø	3.Çå¿ÕÓÃ»§Êı¾İ
+echo.
+echo -------------------------------------------------------------------------------
+choice /m "ÇëÑ¡Ôñ·ÖÇø ^(ADB/TWRP/Fastboot^)" /c ATF
+if %errorlevel%==1 goto path-a
+if %errorlevel%==2 goto path-t
+if %errorlevel%==3 goto path-f
+echo -------------------------------------------------------------------------------
+:path-a
+choice /m "ÇëÑ¡ÔñÖ¸Áî" /c 1234
+if %errorlevel%==1 goto
+if %errorlevel%==2 goto
+if %errorlevel%==3 goto
+if %errorlevel%==4 goto
+:path-t
+choice /m "ÇëÑ¡ÔñÖ¸Áî" /c 1234
+if %errorlevel%==1 goto
+if %errorlevel%==2 goto
+if %errorlevel%==3 goto
+if %errorlevel%==4 goto
+:path-f
+choice /m "ÇëÑ¡ÔñÖ¸Áî" /c 1234
+if %errorlevel%==1 goto
+if %errorlevel%==2 goto
+if %errorlevel%==3 goto
+if %errorlevel%==4 goto
 
 
 goto end
 goto end-wrong
 
 :end-wrong
-set /p powerbyheizi=Äãµô½øÁËÊÀ½ç
+set /p poweredbyheizi=Äãµô½øÁËÊÀ½ç!¸øºÚ×ÖÌá½»Õâ¸öbug°É£¡
 goto edddddddddd
 :end
-set /p powerbyheizi=Ö´ĞĞÍê³É,°´ÈÎÒâ¼ü·µ»ØÖ÷Ò³¡£
+set /p poweredbyheizi=Ö´ĞĞÍê³É,°´ÈÎÒâ¼ü·µ»ØÖ÷Ò³¡£
 goto home
