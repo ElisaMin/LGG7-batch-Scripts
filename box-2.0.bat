@@ -221,7 +221,7 @@ echo       1. “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ ^£®Ω˚”√œµÕ≥”¶”√°¢ ±º‰Õ¨≤Ω°¢“˛≤ÿµº∫Ω¿∏°¢÷ÿ∆Ù°£^£
 echo.
 echo       2. À¢»ÎBOOT         3. «–ªªAB∑÷«¯
 echo.
-echo       4. À¢»ÎGSI          9. ∏ﬂº∂≤Àµ•
+echo       4. À¢»ÎGSI          9. ∏ﬂº∂ƒ£ Ω
 echo.
 echo.
 echo -------------------------------------------------------------------------------
@@ -236,7 +236,7 @@ title ¿¡»Àπ§æﬂ∫–
 cls
 echo PowerBy-HEIZI ¿¡»Àπ§æﬂ∫– V2.0.%number% 
 echo -------------------------------------------------------------------------------
-if mode=stock goto adb-devices
+if %mode%==stock goto adb-devices
 :fastboot-devices
 if exist "%rf%0" del 0
 for /f %%i in ('%fastboot% devices -l') do echo %%i>0
@@ -251,19 +251,18 @@ del 0
 )
 echo ºÏ≤‚µΩ…Ë±∏"%device%" 
 echo -------------------------------------------------------------------------------
-if mode=boot goto flash-boot
-if mode=slot goto slot-active
-if mode=GSI goto GSI-flasher
+if %mode%==boot goto flash-boot
+if %mode%==slot goto slot-active
+if %mode%==GSI goto GSI-flasher
 goto end-wrong
 :adb-devices
 echo µ»¥˝…Ë±∏÷–°≠°≠«ÎΩ´ƒ˙µƒ…Ë±∏≤Â»ÎµÁƒ‘°≠°≠
 echo -------------------------------------------------------------------------------
-%adb% wait-for-device
+::%adb% wait-for-device
 for /f %%i in ('adb devices') do set device=%%i
 echo ºÏ≤‚µΩ…Ë±∏"%device%" 
-goto end-wrong
 echo -------------------------------------------------------------------------------
-if mode=stock goto adb-devices
+if %mode%==stock goto adb-ntps
 goto end-wrong
 :hide
 title ¿¡»Àπ§æﬂ∫– - ∏ﬂº∂ƒ£ Ω
@@ -307,14 +306,240 @@ if %errorlevel%==1 goto
 if %errorlevel%==2 goto
 if %errorlevel%==3 goto
 if %errorlevel%==4 goto
+:adb-hide
 
+:adb-ntps
+if %mode%==stock ( title ¿¡»Àπ§æﬂ∫– - “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ -  ±º‰Õ¨≤Ω ) else ( title ¿¡»Àπ§æﬂ∫– -  ±º‰Õ¨≤Ω )
+echo  ±º‰Õ¨≤Ω
+echo -------------------------------------------------------------------------------
+if %mode%==stock (
+	choice /m "	“™÷¥–– ±º‰Õ¨≤Ω¬£ø^(÷¥––/≤ª÷¥––^)" /c dn
+	echo -------------------------------------------------------------------------------
+	) else (
+		set errorlevel=3
+		%adb% shell settings put global ntp_server ntp1.aliyun.com
+		echo 	÷¥––ÕÍ≥…
+		echo -------------------------------------------------------------------------------
+		goto end
+)
+if %errorlevel%==3 goto end
+if %errorlevel%==1 (
+	echo 	÷¥––÷–°≠°≠°≠°≠
+	echo -------------------------------------------------------------------------------
+	%adb% shell settings put global ntp_server ntp1.aliyun.com
+	echo 	÷¥––ÕÍ≥…
+	echo -------------------------------------------------------------------------------
+	goto adb-shitappkiller
+	)
+if %errorlevel%==2 (
+	echo 	’˝‘⁄Ã¯π˝
+	echo -------------------------------------------------------------------------------
+	goto adb-shitappkiller
+	)
+:adb-shitappkiller
+if %mode%==stock ( title ¿¡»Àπ§æﬂ∫– - “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ - Ω˚”√œµÕ≥”¶”√ ) else ( title ¿¡»Àπ§æﬂ∫– - Ω˚”√œµÕ≥”¶”√)
+echo Ω˚”√œµÕ≥”¶”√
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+if %mode%==stock ( 
+choice /m "	“™∂≥Ω·ªπ «Ω‚∂≥ªπ «Ã¯π˝£ø^(∂≥Ω·/Ω‚∂≥/Ã¯π˝^)" /c FUN
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+) else (
+choice /m "	^(∂≥Ω·/Ω‚∂≥^)" /c DJ
+echo -------------------------------------------------------------------------------
+)
+if %errorlevel%==1 set frozen=disable-user
+if %errorlevel%==2 set frozen=enable
+if %errorlevel%==3 (
+echo ’˝‘⁄Ã¯π˝
+echo -------------------------------------------------------------------------------
+goto adb-navbar
+)
+%adb% shell pm %frozen% com.lge.quicktools
+%adb% shell pm %frozen% com.lge.clock
+%adb% shell pm %frozen% com.lge.hifirecorder
+%adb% shell pm %frozen% com.lge.cic.eden.service
+%adb% shell pm %frozen% com.lge.provider.yellowpage
+%adb% shell pm %frozen% com.lge.cnas.main
+%adb% shell pm %frozen% com.lge.cnas.terms
+%adb% shell pm %frozen% com.lge.iuc
+%adb% shell pm %frozen% com.lge.lms
+%adb% shell pm %frozen% com.lge.qlens
+%adb% shell pm %frozen% com.lge.eulaprovider
+%adb% shell pm %frozen% com.lge.eula
+%adb% shell pm %frozen% com.lge.floatingbar
+%adb% shell pm %frozen% com.lge.cinemagraph
+%adb% shell pm %frozen% com.lguplus.oemsearch
+%adb% shell pm %frozen% com.lge.updatecenter
+%adb% shell pm %frozen% com.lge.lgassistant
+%adb% shell pm %frozen% com.lguplus.mobile.cs
+%adb% shell pm %frozen% com.skt.skaf.OA00018282
+%adb% shell pm %frozen% com.lguplus.appstore
+%adb% shell pm %frozen% com.lge.lgpay
+%adb% shell pm %frozen% com.android.bips
+%adb% shell pm %frozen% com.lge.lgassistant
+%adb% shell pm %frozen% com.android.bookmarkprovider
+%adb% shell pm %frozen% com.android.calendar
+%adb% shell pm %frozen% com.android.calllogbackup
+%adb% shell pm %frozen% com.android.chrome
+%adb% shell pm %frozen% com.android.egg
+%adb% shell pm %frozen% com.android.emergency
+%adb% shell pm %frozen% com.android.hotwordenrollment.okgoogle
+%adb% shell pm %frozen% com.android.hotwordenrollment.tgoogle
+%adb% shell pm %frozen% com.android.hotwordenrollment.xgoogle
+%adb% shell pm %frozen% com.android.printspooler
+%adb% shell pm %frozen% com.android.providers.partnerbookmarks
+%adb% shell pm %frozen% com.crucialsoft.asm
+%adb% shell pm %frozen% com.crucialsoft.fido.client
+%adb% shell pm %frozen% com.crucialtec.uaf
+%adb% shell pm %frozen% com.facebook.appmanager
+%adb% shell pm %frozen% com.facebook.system
+%adb% shell pm %frozen% com.google.android.apps.docs
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.docs
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.sheets
+%adb% shell pm %frozen% com.google.android.apps.docs.editors.slides
+%adb% shell pm %frozen% com.google.android.apps.maps
+%adb% shell pm %frozen% com.google.android.apps.photos
+%adb% shell pm %frozen% com.google.android.apps.tachyon
+%adb% shell pm %frozen% com.google.android.calculator
+%adb% shell pm %frozen% com.google.android.configupdater
+%adb% shell pm %frozen% com.google.android.gm
+%adb% shell pm %frozen% com.google.android.googlequicksearchbox
+%adb% shell pm %frozen% com.google.android.ims
+%adb% shell pm %frozen% com.google.android.marvin.talkback
+%adb% shell pm %frozen% com.google.android.music
+%adb% shell pm %frozen% com.google.android.onetimeinitializer
+%adb% shell pm %frozen% com.google.android.partnersetup
+%adb% shell pm %frozen% com.google.android.printservice.recommendation
+%adb% shell pm %frozen% com.google.android.tts
+%adb% shell pm %frozen% com.google.android.videos
+%adb% shell pm %frozen% com.google.android.youtube
+%adb% shell pm %frozen% com.google.ar.core
+%adb% shell pm %frozen% com.google.ar.lens
+%adb% shell pm %frozen% com.ipsec.profile
+%adb% shell pm %frozen% com.lge.bnr
+%adb% shell pm %frozen% com.lge.bnr.launcher
+%adb% shell pm %frozen% com.lge.briefing
+%adb% shell pm %frozen% com.lge.cloudhub
+%adb% shell pm %frozen% com.lge.exchange
+%adb% shell pm %frozen% com.lge.gallery.collagewallpaper
+%adb% shell pm %frozen% com.lge.gallery.vr.wallpaper
+%adb% shell pm %frozen% com.lge.ia.task.smartsetting
+%adb% shell pm %frozen% com.lge.iftttmanager
+%adb% shell pm %frozen% com.lge.leccp
+%adb% shell pm %frozen% com.lge.lgaccount
+%adb% shell pm %frozen% com.lge.lgmapui
+%adb% shell pm %frozen% com.lge.lifetracker
+%adb% shell pm %frozen% com.lge.livewallpaper.multiphoto
+%adb% shell pm %frozen% com.lge.mirroringhead
+%adb% shell pm %frozen% com.lge.myplace
+%adb% shell pm %frozen% com.lge.myplace.engine
+%adb% shell pm %frozen% com.lge.qhelp
+%adb% shell pm %frozen% com.lge.qhelp.application
+%adb% shell pm %frozen% com.lge.remote.lgairdrive
+%adb% shell pm %frozen% com.lge.remote.setting
+%adb% shell pm %frozen% com.lge.smartshare
+%adb% shell pm %frozen% com.lge.smartshare.provider
+%adb% shell pm %frozen% com.lge.smartsharepush
+%adb% shell pm %frozen% com.lge.smartsuggestion
+%adb% shell pm %frozen% com.lge.sync
+%adb% shell pm %frozen% com.lge.task
+%adb% shell pm %frozen% com.lge.touchcontrol
+%adb% shell pm %frozen% com.lge.video.vr.wallpaper
+%adb% shell pm %frozen% com.lge.videostudio
+%adb% shell pm %frozen% com.lge.vrplayer
+%adb% shell pm %frozen% com.rsupport.rs.activity.lge.allinone
+%adb% shell pm %frozen% com.google.android.syncadapters.calendar
+%adb% shell pm %frozen% com.android.vending
+%adb% shell pm %frozen% com.google.android.gsf
+%adb% shell pm %frozen% com.google.android.gms
+%adb% shell pm %frozen% com.google.android.feedback
+%adb% shell pm %frozen% com.google.android.backuptransport
+:adb-navbar
+if %mode%==stock ( title ¿¡»Àπ§æﬂ∫– - “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ - “˛≤ÿµº∫Ω¿∏ ) else ( title ¿¡»Àπ§æﬂ∫– - “˛≤ÿµº∫Ω¿∏)
+echo “˛≤ÿµº∫Ω¿∏
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo 	C:≥¡Ω˛ƒ£ Ω£¨¿‡À∆”⁄°∞»´∆¡°±µƒ–ßπ˚°£
+echo.
+echo	X:Ω´µº∫Ω¿∏…Ë÷√µΩœ‘ æ«¯”Ú÷ÆÕ‚£¨  ”√”⁄¡˜ÃÂ ÷ ∆÷Æ¿‡µƒ–Ë“™“˛≤ÿµº∫Ω¿∏µƒ ÷ ∆”¶”√°£
+echo.
+if %mode%==stock ( 
+echo 	K:»°œ˚≥¡Ω˛		N:Ã¯π˝ 
+) else (
+echo 	K:»°œ˚≥¡Ω˛
+)
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+if %mode%==stock ( choice  /c cxknmsl /m "∫Û√Êƒ«º∏∏ˆ—°≤ª¡À" ) else ( choice /c cxk )
+if %errorlevel%==1 %adb% shell settings put global policy_control immersive.navigation=*
+if %errorlevel%==2 %adb% shell settings put global policy_control null
+if %errorlevel%==3 goto adb-overscan
+goto adb-reboot
+:adb-overscan
+if %mode%==stock ( title ¿¡»Àπ§æﬂ∫– - “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ -  ÷ ∆–Õµº∫Ω¿∏…Ë÷√ ) else ( title ¿¡»Àπ§æﬂ∫– -  ÷ ∆–Õµº∫Ω¿∏…Ë÷√ )
+echo  ÷ ∆–Õµº∫Ω¿∏…Ë÷√
+echo -------------------------------------------------------------------------------
+echo ≤ªÕ¨µƒ∑÷±Ê¬ ∂‘”¶◊≈≤ªÕ¨µƒ ˝÷µ
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo 	1. 1080p	2. 1440p^(2k^)	3. ◊‘–– ‰»Îœ¬≥¡ ˝÷µ 	4.ª÷∏¥
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+choice /m "«Î—°‘Ò" /c 1234 
+if %errorlevel%==1 %adb% shell wm overscan 0,0,0,-143
+if %errorlevel%==2 %adb% shell wm overscan 0,0,0,-191
+if %errorlevel%==3 goto adb-overscan-loop
+if %errorlevel%==4 %adb% shell wm overscan reset
+:adb-overscan-loop
+if %loop%==off (
+echo  ˝÷µ≤ª¬˙“‚£ø‘Ÿ…Ë÷√“ª¥Œ£ø
+echo -------------------------------------------------------------------------------
+choice /c NY /m "	Œ“¬˙“‚¡À/‘Ÿ¿¥“ª¥Œ"
+echo -------------------------------------------------------------------------------
+if %errorlevel%==2 goto adb-overscan-unloop
+)
+echo  ‰»Îœ¬≥¡ ˝÷µ  
+echo -------------------------------------------------------------------------------
+set /p overscan=
+%adb% shell wm overscan 0,0,0,-%overscan%
+set loop=off
+goto adb-overscan-loop
+:adb-overscan-unloop
+if %mode%==stock ( goto adb-reboot ) else ( goto end )
+
+
+:adb-reboot
+if %mode%==stock ( title ¿¡»Àπ§æﬂ∫– - “ªº¸ Ω”≈ªØπŸ∑ΩœµÕ≥ - ÷ÿ∆Ù ) else ( title ¿¡»Àπ§æﬂ∫– - ∏ﬂº∂÷ÿ∆Ù )
+if %mode%==stock ( echo ÷ÿ∆Ù ) else ( echo ∏ﬂº∂÷ÿ∆Ù )
+echo -------------------------------------------------------------------------------
+echo ≤ªÕ¨µƒ∑÷±Ê¬ ∂‘”¶◊≈≤ªÕ¨µƒ ˝÷µ
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo 	1. 1080p	2. 1440p^(2k^)	3. ◊‘–– ‰»Îœ¬≥¡ ˝÷µ 	4.ª÷∏¥
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+choice /m "«Î—°‘Ò" /c 1234 
+if %errorlevel%==1 %adb% shell wm overscan 0,0,0,-143
+if %errorlevel%==2 %adb% shell wm overscan 0,0,0,-191
+if %errorlevel%==3 goto adb-overscan-loop
+if %errorlevel%==4 %adb% shell wm overscan reset
 
 goto end
 goto end-wrong
 
 :end-wrong
 set /p poweredbyheizi=ƒ„µÙΩ¯¡À ¿ΩÁ!∏¯∫⁄◊÷Ã·Ωª’‚∏ˆbug∞…£°
-goto edddddddddd
+goto home
 :end
 set /p poweredbyheizi=÷¥––ÕÍ≥…,∞¥»Œ“‚º¸∑µªÿ÷˜“≥°£
 goto home
