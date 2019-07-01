@@ -231,11 +231,20 @@ if %errorlevel%==2 set mode=boot
 if %errorlevel%==3 set mode=slot
 if %errorlevel%==4 set mode=GSI
 if %errorlevel%==5 goto hide
+:homme
 cls
 title 懒人工具盒 
 cls
 echo PowerBy-HEIZI 懒人工具盒 V2.0.%number% 
 echo -------------------------------------------------------------------------------
+if %mode%==adb ( 
+if %errorlevel%==1 set mode=ntp
+if %errorlevel%==2 set mode=shitappkiller
+if %errorlevel%==3 set mode=bavbar
+if %errorlevel%==4 set mode=reboot
+goto adb-devices
+
+)
 if %mode%==stock goto adb-devices
 :fastboot-devices
 if exist "%rf%0" del 0
@@ -254,6 +263,8 @@ echo ---------------------------------------------------------------------------
 if %mode%==boot goto flash-boot
 if %mode%==slot goto slot-active
 if %mode%==GSI goto GSI-flasher
+if %mode%==fastboot (
+
 goto end-wrong
 :adb-devices
 echo 等待设备中……请将您的设备插入电脑……
@@ -263,6 +274,10 @@ for /f %%i in ('adb devices') do set device=%%i
 echo 检测到设备"%device%" 
 echo -------------------------------------------------------------------------------
 if %mode%==stock goto adb-ntps
+if %mode%==ntp goto adb-ntps
+if %mode%==shitappkiller goto adb-shitappkiller
+if %mode%==navbar goto adb-navbar
+if %mode%==reboot goto adb-reboot
 goto end-wrong
 :hide
 title 懒人工具盒 - 高级模式
@@ -274,13 +289,13 @@ echo -------------------------------ADB-分区------------------------------------
 echo.
 echo 		1.时间同步		2.隐藏导航栏		3.禁用软件		4.ADB重启
 echo.
-echo -------------------------------TWRP-分区---------------------------------------
-echo.
-echo 				1.无限TWRP循环				2.线刷ZIP包
-echo.
+rem echo -------------------------------TWRP-分区---------------------------------------
+rem echo.
+rem echo               1.无限TWRP循环                  2.线刷ZIP包
+rem echo.
 echo -----------------------------Fastboot-分区-------------------------------------
 echo.
-echo 			1.切换系统槽	2.刷入任意分区	3.清空用户数据
+echo               1.刷入任意分区                  2.清空data分区
 echo.
 echo -------------------------------------------------------------------------------
 choice /m "请选择分区 ^(ADB/TWRP/Fastboot^)" /c ATF
@@ -290,30 +305,40 @@ if %errorlevel%==3 goto path-f
 echo -------------------------------------------------------------------------------
 :path-a
 choice /m "请选择指令" /c 1234
-if %errorlevel%==1 goto
-if %errorlevel%==2 goto
-if %errorlevel%==3 goto
-if %errorlevel%==4 goto
+set mode=adb
+goto homme
 :path-t
+echo 未开放
+goto end
 choice /m "请选择指令" /c 1234
 if %errorlevel%==1 goto
 if %errorlevel%==2 goto
+goto end-
 if %errorlevel%==3 goto
 if %errorlevel%==4 goto
 :path-f
 choice /m "请选择指令" /c 1234
-if %errorlevel%==1 goto
-if %errorlevel%==2 goto
+set mode=fastboot-hide
+goto homme
+goto end-error
 if %errorlevel%==3 goto
 if %errorlevel%==4 goto
-:adb-hide
-
 :adb-ntps
+echo.
+echo -------------------------------------------------------------------------------
 if %mode%==stock ( title 懒人工具盒 - 一键式优化官方系统 - 时间同步 ) else ( title 懒人工具盒 - 时间同步 )
 echo 时间同步
 echo -------------------------------------------------------------------------------
 if %mode%==stock (
-	choice /m "	要执行时间同步吗？^(执行/不执行^)" /c dn
+	echo 要执行时间同步吗？
+	echo -------------------------------------------------------------------------------
+	echo.
+	echo.
+	echo 	D.执行		N.不执行
+	echo.
+	echo.
+	echo -------------------------------------------------------------------------------
+	choice /c dn /t 0003 /d d
 	echo -------------------------------------------------------------------------------
 	) else (
 		set errorlevel=3
@@ -337,27 +362,35 @@ if %errorlevel%==2 (
 	goto adb-shitappkiller
 	)
 :adb-shitappkiller
+echo.
+echo -------------------------------------------------------------------------------
 if %mode%==stock ( title 懒人工具盒 - 一键式优化官方系统 - 禁用系统应用 ) else ( title 懒人工具盒 - 禁用系统应用)
 echo 禁用系统应用
+echo -------------------------------------------------------------------------------
+echo 请选择选项
 echo -------------------------------------------------------------------------------
 echo.
 echo.
 if %mode%==stock ( 
-choice /m "	要冻结还是解冻还是跳过？^(冻结/解冻/跳过^)" /c FUN
-echo.
-echo.
-echo -------------------------------------------------------------------------------
+echo 	D.冻结	N.解冻	N.跳过
 ) else (
-choice /m "	^(冻结/解冻^)" /c DJ
-echo -------------------------------------------------------------------------------
+echo 	F.冻结	U.解冻
 )
-if %errorlevel%==1 set frozen=disable-user
-if %errorlevel%==2 set frozen=enable
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+if %mode%==stock ( 
+choice /c DUN  /t 0003 /d d
+) else (
+choice /m "	^(冻结/解冻^)" /c FU
+)
 if %errorlevel%==3 (
 echo 正在跳过
 echo -------------------------------------------------------------------------------
 goto adb-navbar
 )
+if %errorlevel%==1 set frozen=disable-user
+if %errorlevel%==2 set frozen=enable
 %adb% shell pm %frozen% com.lge.quicktools
 %adb% shell pm %frozen% com.lge.clock
 %adb% shell pm %frozen% com.lge.hifirecorder
@@ -458,7 +491,11 @@ goto adb-navbar
 %adb% shell pm %frozen% com.google.android.gms
 %adb% shell pm %frozen% com.google.android.feedback
 %adb% shell pm %frozen% com.google.android.backuptransport
+echo -------------------------------------------------------------------------------
+if %mode%==stock ( goto adb-navbar ) else ( goto end )
 :adb-navbar
+echo.
+echo -------------------------------------------------------------------------------
 if %mode%==stock ( title 懒人工具盒 - 一键式优化官方系统 - 隐藏导航栏 ) else ( title 懒人工具盒 - 隐藏导航栏)
 echo 隐藏导航栏
 echo -------------------------------------------------------------------------------
@@ -466,7 +503,7 @@ echo.
 echo.
 echo 	C:沉浸模式，类似于“全屏”的效果。
 echo.
-echo	X:将导航栏设置到显示区域之外，适用于流体手势之类的需要隐藏导航栏的手势应用。
+echo 	X:将导航栏设置到显示区域之外，适用于流体手势之类要隐藏导航栏的手势应用。
 echo.
 if %mode%==stock ( 
 echo 	K:取消沉浸		N:跳过 
@@ -476,12 +513,13 @@ echo 	K:取消沉浸
 echo.
 echo.
 echo -------------------------------------------------------------------------------
-if %mode%==stock ( choice  /c cxknmsl /m "后面那几个选不了" ) else ( choice /c cxk )
+if %mode%==stock ( choice  /c cxknmsl /m "^(后面那几个选不了 默认跳过^)"  /t 0003 /d n ) else ( choice /c cxk )
 if %errorlevel%==1 %adb% shell settings put global policy_control immersive.navigation=*
 if %errorlevel%==2 %adb% shell settings put global policy_control null
 if %errorlevel%==3 goto adb-overscan
 goto adb-reboot
 :adb-overscan
+cls
 if %mode%==stock ( title 懒人工具盒 - 一键式优化官方系统 - 手势型导航栏设置 ) else ( title 懒人工具盒 - 手势型导航栏设置 )
 echo 手势型导航栏设置
 echo -------------------------------------------------------------------------------
@@ -517,26 +555,120 @@ if %mode%==stock ( goto adb-reboot ) else ( goto end )
 
 
 :adb-reboot
+echo.
+echo -------------------------------------------------------------------------------
 if %mode%==stock ( title 懒人工具盒 - 一键式优化官方系统 - 重启 ) else ( title 懒人工具盒 - 高级重启 )
 if %mode%==stock ( echo 重启 ) else ( echo 高级重启 )
 echo -------------------------------------------------------------------------------
-echo 不同的分辨率对应着不同的数值
+echo 请选择
 echo -------------------------------------------------------------------------------
 echo.
 echo.
-echo 	1. 1080p	2. 1440p^(2k^)	3. 自行输入下沉数值 	4.恢复
+if %mode%==stock ( 
+choice /c dn
+echo 	D:重启		N:跳过
+) else ( 
+echo 	1.重启		2.Recovery模式		3.重启到Bootloader		4. sideload
+)
 echo.
 echo.
 echo -------------------------------------------------------------------------------
-choice /m "请选择" /c 1234 
-if %errorlevel%==1 %adb% shell wm overscan 0,0,0,-143
-if %errorlevel%==2 %adb% shell wm overscan 0,0,0,-191
-if %errorlevel%==3 goto adb-overscan-loop
-if %errorlevel%==4 %adb% shell wm overscan reset
-
+if %mode%==stock ( choice /c dn /t 0003 /d d ) else ( choice /c 1234)
+echo -------------------------------------------------------------------------------
+echo 执行中……
+echo -------------------------------------------------------------------------------
+if %errorlevel%==1 %adb% reboot
+if %errorlevel%==2 (
+	if %mode%==stock ( 
+	echo -------------------------------------------------------------------------------
+	) else ( 
+	%adb% reboot recovery
+	)
+)
+if %errorlevel%==3 %adb% reboot bootloader
+if %errorlevel%==4 (
+%adb% reboot sideload
+choice /c1234 /m "进入sideload模式？^(不/不/不/好^)"
+)
+if %errorlevel%==4 (
+set mode=reboor-sideload
+goto adb-hide
+)
 goto end
-goto end-wrong
-
+:GSI-flasher
+title 懒人工具盒 - 刷GSI
+echo 正在弹出教程……
+echo -------------------------------------------------------------------------------
+echo 请将System映像拖入本窗口中后按回车键确认，没有按回车键跳过。
+echo -------------------------------------------------------------------------------
+set /p system=
+echo -------------------------------------------------------------------------------
+echo 请将vendor映像拖入本窗口中后按回车键确认，没有按回车键跳过。
+echo -------------------------------------------------------------------------------
+set /p vendor=
+echo -------------------------------------------------------------------------------
+echo 请将vbmeta映像拖入本窗口中后按回车键确认，没有按回车键跳过。
+echo -------------------------------------------------------------------------------
+set /p vbmeta=
+echo -------------------------------------------------------------------------------
+echo 请将boot映像拖入本窗口中后按回车键确认，没有按回车键跳过。
+echo -------------------------------------------------------------------------------
+set /p boot=
+echo -------------------------------------------------------------------------------
+cls
+echo PowerBy-HEIZI 懒人工具盒 V2.0.%number% 
+echo -------------------------------------------------------------------------------
+echo 请选择模式
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo  	A.单刷A系统槽^/分区 	B.单刷B系统槽^/分区 	C.我全都要！
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+choice /c abc
+echo -------------------------------------------------------------------------------
+if %errorlevel%==1 %fastboot% flash --set-active=a boot_a %boot% && %fastboot% --disable-verity --disable-verification flash vbmeta_a %vbmeta% && %fastboot% flash vendor_a %vendor% && %fastboot% flash system_a %system% 
+if %errorlevel%==2 %fastboot% flash --set-active=a boot_b %boot% && %fastboot% --disable-verity --disable-verification flash vbmeta_b %vbmeta% && %fastboot% flash vendor_b %vendor% && %fastboot% flash system_b %system% 
+if %errorlevel%==3 %fastboot% flash --set-active=a boot_a %boot% && %fastboot% --disable-verity --disable-verification flash vbmeta_a %vbmeta% && %fastboot% flash vendor_a %vendor% && %fastboot% flash system_a %system% && %fastboot% flash --set-active=a boot_b %boot% && %fastboot% --disable-verity --disable-verification flash vbmeta_b %vbmeta% && %fastboot% flash vendor_b %vendor% && %fastboot% flash system_b %system% 
+choice /m "需要格式化data分区吗？^(行/不用了^)" /c yn
+if %errorlevel%==1 %fastboot% -w reboot
+%fastboot% reboot
+goto end
+:flash-boot
+title 懒人工具盒 - 刷BOOT
+echo 请将Boot拖入本窗口中后按回车键确认。
+echo -------------------------------------------------------------------------------
+set /p boot=
+echo -------------------------------------------------------------------------------
+echo 请选择要刷入分区^/系统槽
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo  	1.单刷A分区^/系统槽 	2.单刷B分区^/系统槽 	C.我全都要！
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+choice /c abc
+echo -------------------------------------------------------------------------------
+if %errorlevel%==1 %fastboot% flash boot_a %boot%
+if %errorlevel%==2 %fastboot% flash boot_b %boot%
+if %errorlevel%==3 %fastboot% flash boot_a %boot% && %fastboot% flash boot_b %boot%
+goto end
+:slot-active
+echo 请选择要激活的系统槽^/分区
+echo -------------------------------------------------------------------------------
+echo.
+echo.
+echo       A.激活A系统槽^/分区          B.激活B系统槽^/分区
+echo.
+echo.
+echo -------------------------------------------------------------------------------
+choice /c ab
+echo -------------------------------------------------------------------------------
+if %errorlevel%==1 %fastboot%  --set-active=a reboot
+if %errorlevel%==2 %fastboot%  --set-active=b reboot
+goto end 
 :end-wrong
 set /p poweredbyheizi=你掉进了世界!给黑字提交这个bug吧！
 goto home
