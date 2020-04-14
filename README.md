@@ -1,3 +1,6 @@
+# 4.14 
+[新收入一个解bl的script ](/第二步.bat)
+
 # LazyBox
 > Tips : this shit dosen't work on non-Chinese environment so……
 ## LAF杀手
